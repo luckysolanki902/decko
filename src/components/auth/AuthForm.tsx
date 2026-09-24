@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { ArrowLeft, Eye, EyeOff, Loader2, UserPlus } from 'lucide-react';
 
+import { SessionUser, updateSession } from '@/lib/useSession';
+
 interface AuthFormProps {
   /** Where to land after success. Supplied by the ?next= query param. */
   next?: string;
@@ -29,9 +31,9 @@ export function AuthForm({ next }: AuthFormProps) {
   // normalised name the account will be created under.
   const [confirmSignup, setConfirmSignup] = useState<string | null>(null);
 
-  function goToDestination() {
-    // Full refresh so server components pick up the new session cookie.
-    router.push(next && next.startsWith('/') ? next : '/');
+  function goToDestination(user: SessionUser) {
+    updateSession(user);
+    router.replace(next && next.startsWith('/') ? next : '/');
     router.refresh();
   }
 
@@ -49,7 +51,7 @@ export function AuthForm({ next }: AuthFormProps) {
       const data = await response.json();
 
       if (data.success) {
-        goToDestination();
+        goToDestination(data.user);
         return;
       }
 
@@ -78,7 +80,7 @@ export function AuthForm({ next }: AuthFormProps) {
       const data = await response.json();
 
       if (data.success) {
-        goToDestination();
+        goToDestination(data.user);
         return;
       }
 

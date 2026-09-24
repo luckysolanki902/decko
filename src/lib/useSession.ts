@@ -44,6 +44,13 @@ export function invalidateSession(): void {
   inFlight = null;
 }
 
+/** Publishes a session returned by login/register without another round trip. */
+export function updateSession(user: SessionUser | null): void {
+  cachedUser = user;
+  inFlight = null;
+  listeners.forEach(listener => listener(user));
+}
+
 export function useSession(): { user: SessionUser | null; isLoading: boolean; signOut: () => Promise<void> } {
   const [user, setUser] = useState<SessionUser | null>(cachedUser ?? null);
   const [isLoading, setIsLoading] = useState(cachedUser === undefined);
@@ -67,9 +74,7 @@ export function useSession(): { user: SessionUser | null; isLoading: boolean; si
 
   const signOut = useCallback(async () => {
     await fetch('/api/auth/logout', { method: 'POST' });
-    invalidateSession();
-    cachedUser = null;
-    listeners.forEach(listener => listener(null));
+    updateSession(null);
     window.location.href = '/';
   }, []);
 

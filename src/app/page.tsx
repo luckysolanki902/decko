@@ -17,17 +17,20 @@ import {
 import { SiteHeader } from '@/components/SiteHeader';
 import { TrackersSection } from '@/components/trackers/TrackersSection';
 import { COURSES, COURSE_TOTALS } from '@/data/courses';
+import { getSession } from '@/lib/auth';
 import { GITHUB_REPO_URL, SITE_NAME } from '@/lib/site';
 
 const ICONS = { Code2, TerminalSquare, Smartphone, Brain, Binary, BarChart3 };
 
-export default function Home() {
+export default async function Home() {
+  const session = await getSession();
+
   return (
     <>
       <SiteHeader />
 
       <main className="min-h-screen">
-        <Hero />
+        {!session && <Hero />}
         <Courses />
         <WhyItWorks />
         <LearningLoop />
