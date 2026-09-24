@@ -1,0 +1,210 @@
+import type { Phase, Section, Topic } from '@/types';
+
+type Day = [title: string, areas: [string, string, string, string]];
+type Spec = { title: string; subtitle: string; goal: string; project: string; user: string; decision: string; days: Day[] };
+
+function makeTopic(day: number, index: number, area: string): Topic {
+  return { id: `day${day}-topic${index + 1}`, title: area, duration: '50 mins', items: [
+    `Build the first-principles mental model for ${area}; name the question it answers and the unit of analysis`,
+    `Predict and trace a tiny example of ${area} before inspecting the result`,
+    `Apply ${area} to a realistic analyst decision while stating assumptions, units, and boundaries`,
+    `Break one assumption behind ${area}; diagnose the visible failure and perform the corrective check`,
+  ] };
+}
+
+function makeSection(spec: Spec, value: Day, day: number, last: boolean): Section {
+  const topics = value[1].map((area, index) => makeTopic(day, index, area));
+  topics.push({ id: `day${day}-practice`, title: last ? 'Phase gate: independent delivery and transfer' : 'Practice, retrieval, and analyst judgment', duration: last ? '100 mins' : '40 mins', items: last ? [
+    `Deliver ${spec.project} for ${spec.user}; support the decision: ${spec.decision}`,
+    'Reconstruct the critical workflow without the example open and disclose help used',
+    'Find and repair a planted data, logic, or communication failure with evidence',
+    'Respond to a changed requirement without being told which technique to use',
+    'State limitations, non-goals, uncertainty, and what evidence would change the recommendation',
+  ] : [
+    'Retrieve one recent mechanism and one older prerequisite before consulting notes',
+    'Complete a guided example, then reconstruct its critical path from a blank artifact',
+    'Solve a changed task that requires choosing among already-taught tools',
+    'Record the decision changed, failure tested, help used, and adaptive 1/3/7/14/30-day review cue',
+  ], ...(last ? { project: { title: spec.project, description: `Build for ${spec.user}. The result must support this decision: ${spec.decision} Include reproducible inputs, validation evidence, one tested failure, a changed requirement, and an explicit non-goal.`, type: 'capstone' as const, features: ['Reproducible source-to-output workflow', 'Documented quality checks and assumptions', 'Decision-ready output for a named user', 'Independent reconstruction and transfer evidence'], hints: ['Start from the decision, not the tool', 'Keep raw inputs immutable', 'Separate facts, interpretation, and recommendation'] } } : {}) });
+  return { id: `day${day}`, title: `Day ${day}: ${value[0]}`, duration: last ? '5 hours' : '4 hours', topics };
+}
+
+const specs: Spec[] = [
+  { title: 'Python & Exploratory Analysis Foundations', subtitle: 'Ask a data question on Day 1 while learning the Python needed to answer it', goal: 'Run a reproducible Python analysis, inspect a small dataset, and distinguish a useful pattern from a quality problem.', project: 'Neighbourhood Cooling-Centre Access Brief', user: 'a city resilience coordinator', decision: 'which neighbourhoods need extended cooling-centre hours during the next heat alert?', days: [
+    ['The Analyst Loop & First Dataset', ['Question → rows → checks → evidence → decision', 'Python, VS Code, Jupyter cells, and restart-run-all discipline', 'CSV rows, columns, headers, types, and analytical grain', 'First EDA with shape, columns, head, value counts, and missingness']],
+    ['Values, Variables & Business Arithmetic', ['Names, assignment, literals, and snake_case', 'Integers, floats, precedence, ratios, rates, and percentages', 'Strings, f-strings, labels, and units', 'Types, conversion failures, and misleading precision']],
+    ['Conditions & Data Rules', ['Booleans, comparisons, membership, and boundaries', 'if/elif/else as ordered business rules', 'and/or/not precedence and truth tables', 'Missing categories and rule-order bugs']],
+    ['Lists & Row-Level Thinking', ['Lists, indexing, slicing, mutation, and copying', 'Iteration over observations with for loops', 'range, enumerate, accumulators, and running checks', 'Comprehensions versus explicit loops for readable transformations']],
+    ['Dictionaries & Records', ['Key-value records and safe lookup', 'Nested records as table-shaped data', 'Counting categories and grouping by key', 'Missing keys, duplicate identifiers, and schema drift']],
+    ['Strings for Messy Categories', ['String indexing, slicing, immutability, and Unicode', 'strip, case normalization, replace, split, and join', 'Validation with membership and character tests', 'Over-cleaning and preserving raw text']],
+    ['Loops That Aggregate', ['Accumulator patterns for totals, counts, minima, and maxima', 'Nested loops and relationship-aware iteration', 'break, continue, loop else, and control-flow traces', 'Off-by-one, double-counting, and denominator failures']],
+    ['Functions for Repeatable Analysis', ['Parameters, arguments, returns, and pure transformations', 'Default and keyword arguments without hidden state', 'Docstrings, type hints, and single-purpose design', 'Scope, mutation, None returns, and testable boundaries']],
+    ['Reading CSV Data Safely', ['Paths, working directories, and pathlib', 'with blocks, encoding, newline handling, and csv.DictReader', 'Schema checks, row counts, and source metadata', 'Malformed rows, delimiters, and immutable raw inputs']],
+    ['Summaries Before Charts', ['Count, sum, min, max, mean, and median', 'Frequency tables, proportions, and denominator labels', 'Sorting, top-N, ties, and the long tail', 'Small samples, missing values, and hidden variation']],
+    ['First Evidence Chart', ['Question-first chart selection', 'Matplotlib figure, axes, marks, labels, and scales', 'Bar charts and histograms from checked summaries', 'Truncated axes, crowded labels, and distorted evidence']],
+    ['Phase Project — Heat Access Brief', ['Scope, user, decision, grain, and data dictionary', 'Python cleaning and summary workflow with assertions', 'One table and two charts for distinct questions', 'Recommendation, uncertainty, limitations, and reproducible README']],
+  ]},
+  { title: 'Python Problem Solving & Program Design', subtitle: 'Build reliable analytical utilities instead of notebook fragments', goal: 'Use collections, functions, modules, and tests to turn repeated analysis into understandable programs.', project: 'Community Pantry Stock Reconciliation', user: 'a volunteer pantry operations lead', decision: 'which staples require redistribution before the weekend?', days: [
+    ['Tuples, Sets & Collection Choice', ['Tuple packing, unpacking, and immutable returns', 'Set uniqueness, membership, and set algebra', 'List versus tuple versus set decisions', 'Hashability, order assumptions, and accidental deduplication']],
+    ['Comprehensions Without Hidden Logic', ['List comprehensions', 'Set and dictionary comprehensions', 'Filtering versus transforming', 'Loop expansion and nested-comprehension limits']],
+    ['Function Contracts & Validation', ['Preconditions, postconditions, and invariants', 'Guard clauses and validation messages', 'Positional, keyword, default, *args, and **kwargs', 'Mutable defaults, coercion, and oversized functions']],
+    ['Scope, Closures & Functional Tools', ['LEGB name lookup', 'Closures as remembered configuration', 'lambda boundaries', 'map/filter versus comprehensions']],
+    ['Modules, Imports & Packages', ['Module namespaces and import styles', '__name__ and script-versus-import behavior', 'Package folders and dependency direction', 'Circular imports and shadowed names']],
+    ['Testing Small Data Functions', ['Example tests and edge cases', 'pytest arrange-act-assert', 'Parameterized boundary tests', 'Happy-path-only false confidence']],
+    ['Iterators, Generators & Large Inputs', ['Iterable versus iterator', 'yield and lazy evaluation', 'Streaming rows rather than loading all records', 'Exhaustion, one-pass bugs, and memory checks']],
+    ['Sorting, Keys & Ranking Rules', ['sorted versus list.sort', 'Key functions and multi-field order', 'Stable sorting and deterministic ties', 'Missing values and unjustified top-N rules']],
+    ['Dates, Times & Reporting Periods', ['date, datetime, timedelta, parsing, and formatting', 'Calendar periods versus rolling windows', 'Time zones and local dates', 'Inclusive endpoints and period boundaries']],
+    ['Decimal, Money & Rounding', ['Binary floating-point failure', 'Decimal construction and quantization', 'Currency units and percentage points', 'Premature rounding and reconciliation gaps']],
+    ['Command-Line Analytical Utilities', ['argparse contracts', 'Input/output paths and dry runs', 'Logging versus result output', 'Idempotent reruns and overwrite protection']],
+    ['Phase Project — Pantry Reconciliation', ['Record contracts and unit definitions', 'Reusable parsing, validation, matching, and ranking', 'Tests for duplicates, missing IDs, and unit mismatch', 'Operator report, transfer scenario, and runbook']],
+  ]},
+  { title: 'Files, Errors, OOP & Reproducible Workflows', subtitle: 'Make analytical programs survive imperfect inputs and handoffs', goal: 'Design file workflows with explicit errors, configuration, domain objects, logs, and reproducible environments.', project: 'Archive Condition Survey Pipeline', user: 'a regional archive conservator', decision: 'which collections should receive the next preservation inspection slots?', days: [
+    ['Text, CSV & JSON Boundaries', ['Text versus bytes and encoding', 'CSV dialects, quoting, and delimiters', 'JSON values, nesting, and schema expectations', 'Round trips and lossy conversion']],
+    ['Paths & Safe File Operations', ['pathlib joining and resolution', 'Directory iteration and explicit glob selection', 'Temporary outputs and atomic replace', 'Overwrite, race, and traversal risks']],
+    ['Exceptions as Contracts', ['Traceback reading', 'try/except/else/finally flow', 'Specific exceptions and preserved context', 'raise and failures not to swallow']],
+    ['Logging & Diagnostic Evidence', ['Log levels and audiences', 'File, row, rule, and run context', 'Handlers and formatting', 'Secrets, personal data, and noisy logs']],
+    ['Configuration & Environments', ['Configuration precedence', 'Environment variables and secrets boundaries', 'venv, pip, requirements, and pinning', 'Version drift and setup verification']],
+    ['Classes for Domain Rules', ['State, behavior, identity, and class cost', '__init__, attributes, methods, and invariants', 'Class versus dictionary versus function', 'God objects and hidden mutation']],
+    ['Dataclasses & Validated Records', ['Generated record methods', 'Hints, defaults, factories, and frozen state', 'Post-init validation and derived properties', 'Mutable fields and scattered validation']],
+    ['Composition, Inheritance & Protocols', ['Composition for has-a relationships', 'Inheritance and substitutability', 'Duck typing and behavioral contracts', 'Fragile hierarchies and concrete-type checks']],
+    ['Context Managers & Resource Safety', ['Acquire-use-release lifecycle', 'with for managed resources', 'Custom context managers', 'Leaks, partial writes, and masked exceptions']],
+    ['Regex for Bounded Extraction', ['Literals, classes, quantifiers, groups, and anchors', 'Raw strings and compiled patterns', 'Named extraction and fullmatch validation', 'Complexity, readability, and string-method alternatives']],
+    ['Auditable Pipeline Stages', ['Explicit stage dependencies', 'Manifests, checksums, and run IDs', 'Safe retries and preserved failed inputs', 'Partial success, duplicates, and recovery']],
+    ['Phase Project — Archive Survey Pipeline', ['Condition schema and controlled vocabulary', 'Validated ingestion and rejection quarantine', 'Tested prioritization rules', 'Inspection brief, audit trail, and handoff drill']],
+  ]},
+  { title: 'NumPy & Pandas Foundations', subtitle: 'Move from Python records to vectorized, auditable tables', goal: 'Use arrays and DataFrames with deliberate shapes, dtypes, indexes, selections, transformations, and grouped summaries.', project: 'Coastal Water-Sampling Review', user: 'a watershed monitoring coordinator', decision: 'which sites need a repeat visit before the monthly report?', days: [
+    ['NumPy Arrays, Shape & Dtype', ['Array values, axes, shape, and dtype', 'Creation, inspection, and explicit types', 'Vectorized arithmetic and units', 'Mismatch, overflow, truncation, and coercion']],
+    ['Indexing, Slicing & Masks', ['One- and multi-dimensional indexing', 'Slices as views and copy evidence', 'Boolean masks and conditions', 'Broadcasting and chained-selection mistakes']],
+    ['Broadcasting & Vectorization', ['Elementwise operations versus loops', 'Trailing-dimension compatibility', 'where, clip, and conditional transformation', 'Memory cost and unreadable vector tricks']],
+    ['Aggregations & Numerical Checks', ['Axis-aware aggregations and percentiles', 'NaN propagation and nan-aware operations', 'isclose and tolerances', 'Empty slices and silent warnings']],
+    ['Series, DataFrame & Index', ['Labeled one- and two-dimensional data', 'Columns, index, shape, dtypes, and info', 'Frames from records and columns', 'Duplicate labels and mixed types']],
+    ['Reading Data & Controlling Types', ['read_csv selection and parsing', 'Nullable strings, integers, booleans, and categories', 'Missing markers and NA policy', 'Inference drift and identifier corruption']],
+    ['Selecting Rows & Columns', ['Bracket selection, loc, and iloc', 'Boolean filtering and parentheses', 'query expression boundaries', 'Chained assignment diagnosis']],
+    ['Creating & Transforming Columns', ['Vectorized arithmetic and string accessors', 'assign, map, replace, and categories', 'apply as fallback', 'Index alignment and accidental NaN']],
+    ['Sorting, Ranking & Deduplication', ['Multi-key stable sorting', 'Rank methods and ties', 'Duplicate detection with explicit keys', 'Wrong survivor and legitimate repeats']],
+    ['GroupBy from Split to Combine', ['Grouping grain', 'Named aggregations', 'transform for group-relative features', 'Dropped NA groups and mixed grains']],
+    ['Combining Tables Safely', ['concat axes', 'merge keys, join types, cardinality, and validate', 'Indicators and unmatched reconciliation', 'Many-to-many explosions and collisions']],
+    ['Phase Project — Water Sample Review', ['Station, visit, measurement, and threshold grains', 'Typed ingestion and vectorized quality flags', 'Validated joins and exception summaries', 'Repeat-visit recommendation and reproducibility']],
+  ]},
+  { title: 'Data Cleaning, EDA & Visualization', subtitle: 'Turn messy tables into trustworthy patterns without hiding uncertainty', goal: 'Profile, clean, reshape, visualize, and document real data while protecting meaning and grain.', project: 'Public Library Programme Equity Study', user: 'a library programming director', decision: 'where should evening-programme funding be allocated next quarter?', days: [
+    ['Data Profiling as Investigation', ['Schema, grain, keys, counts, and lineage', 'Missingness, uniqueness, ranges, and categories', 'Cross-field consistency', 'Risk-prioritized profiling report']],
+    ['Missing Data Mechanisms', ['Absent, unknown, not-applicable, and suppressed values', 'Missingness patterns', 'Deletion, explicit category, fill, and sensitivity', 'Blanket fill and invented certainty']],
+    ['Duplicates & Entity Resolution', ['Row duplicates versus entity duplicates', 'Candidate keys and survivorship', 'Normalized match fields', 'False merges, false splits, and audits']],
+    ['Outliers & Valid Extremes', ['Range rules and domain limits', 'IQR and robust segment checks', 'Correct, cap, exclude, or retain', 'Deleting inconvenient truth']],
+    ['Tidy Data & Reshaping', ['Observation, variable, and value', 'melt from wide to long', 'pivot and pivot_table', 'Duplicate keys and lost identifiers']],
+    ['Categorical & Text Cleaning', ['Whitespace, case, Unicode, and mappings', 'Ordered categories and unknown buckets', 'String extraction', 'Collapsed meanings and reversibility']],
+    ['Dates, Periods & Time-Aware EDA', ['Datetime parsing and ambiguity', 'Components, periods, and durations', 'Resample versus calendar grouping', 'Incomplete periods and timezone mistakes']],
+    ['Distribution Charts', ['Histogram bins and density', 'Box, violin, and ECDF trade-offs', 'Segment comparison on common scales', 'Small groups and hidden multimodality']],
+    ['Comparison & Relationship Charts', ['Ordered bars, dots, and references', 'Scatterplots, transparency, and facets', 'Correlation versus cause', 'Dual axes, overplotting, and Simpson’s paradox']],
+    ['Seaborn & Matplotlib Together', ['Pandas → Seaborn → Matplotlib stack', 'Figures, axes, themes, labels, and annotation', 'Small multiples', 'Color accessibility and legend overload']],
+    ['EDA Narrative & Reproducibility', ['Question and hypothesis logs', 'Facts, interpretation, and recommendation', 'Restart-run-all and reusable code', 'Cherry-picking and causal overreach']],
+    ['Phase Project — Library Equity Study', ['Programme, branch, capacity, and neighbourhood grains', 'Cleaning log with before/after evidence', 'EDA from overview to segment and anomaly', 'Funding recommendation and alternative explanation']],
+  ]},
+  { title: 'Excel for Auditable Analysis', subtitle: 'Use spreadsheets as controlled analytical systems', goal: 'Build reviewable Excel models with tables, formulas, pivots, controls, charts, and reconciliation checks.', project: 'Festival Vendor Settlement Workbook', user: 'a nonprofit festival finance manager', decision: 'which vendor settlements can be approved and which require investigation?', days: [
+    ['Workbook Structure & Controls', ['Raw, reference, calculation, output, and control sheets', 'Excel Tables and structured references', 'Data validation', 'Merged cells, hidden constants, and manual-format failures']],
+    ['References & Formula Reasoning', ['Relative, absolute, and mixed references', 'Formula evaluation and dependency tracing', 'Arithmetic, units, and parentheses', 'Copied-reference drift and text numbers']],
+    ['Logical & Error-Aware Formulas', ['IF, IFS, AND, OR, and ordered rules', 'IFERROR after root-cause diagnosis', 'IS functions and validation flags', 'Nested logic and blank-versus-zero']],
+    ['Conditional Aggregation', ['SUMIF/SUMIFS', 'COUNTIF/COUNTIFS', 'AVERAGEIFS and denominators', 'Criteria, mismatched ranges, and exclusions']],
+    ['Lookups & Reconciliation', ['XLOOKUP exact matching', 'INDEX/MATCH mental model', 'Multi-key helper strategies', 'Approximate matches and duplicate keys']],
+    ['Text, Dates & Dynamic Arrays', ['TRIM, CLEAN, SUBSTITUTE, and TEXT', 'DATE, EOMONTH, and WORKDAY', 'FILTER, SORT, UNIQUE, and spills', 'Locale dates and blocked spills']],
+    ['PivotTables & PivotCharts', ['Pivot grain and fields', 'Aggregation and show-values-as', 'Refresh and source growth', 'Stale cache and double counting']],
+    ['Power Query Foundations', ['Connect-transform-load', 'Applied steps and types', 'Append versus merge', 'Step order and source-path failures']],
+    ['Power Query Reshaping', ['Unpivot to tidy records', 'Group, pivot, merge, and custom columns', 'Folder combine and schema checks', 'Parameters and unexpected columns']],
+    ['Excel Charts & Decision Layout', ['Question-led chart choice', 'Direct labels and reference lines', 'Dashboard layout and reading order', '3D, dual axes, and chartjunk']],
+    ['Spreadsheet Audit & Protection', ['Control totals and exception flags', 'Precedent and consistency scans', 'Protected inputs and version notes', 'Overrides, hidden sheets, and undocumented macros']],
+    ['Phase Project — Vendor Settlement', ['Contract, sales, fee, refund, and payment design', 'Power Query ingestion and settlement formulas', 'Reconciliation and exception workflow', 'Approval dashboard and changed-rate transfer']],
+  ]},
+  { title: 'SQL Query Foundations', subtitle: 'Ask precise questions of relational data and prove result grain', goal: 'Write readable SQL that filters, aggregates, joins, and reconciles without changing the intended unit.', project: 'Repair Café Parts & Visit Analysis', user: 'a cooperative repair-café coordinator', decision: 'which repair categories need more volunteer coverage and parts budget?', days: [
+    ['Relational Thinking & First Queries', ['Tables, rows, columns, keys, relationships, and grain', 'SELECT, FROM, aliases, and expressions', 'LIMIT for inspection', 'Result grain and duplicates']],
+    ['Filtering & Three-Valued Logic', ['WHERE, BETWEEN, IN, and LIKE', 'AND/OR precedence', 'NULL, IS NULL, and UNKNOWN', 'Filters that erase missing rows']],
+    ['Sorting, Distinctness & CASE', ['Multi-key ORDER BY and ties', 'DISTINCT as a column question', 'CASE for documented categories', 'Evaluation order and hidden duplicates']],
+    ['Aggregation & GROUP BY', ['COUNT variants, SUM, AVG, MIN, and MAX', 'GROUP BY grain', 'HAVING versus WHERE', 'Weights, denominators, and mixed grain']],
+    ['Inner & Outer Joins', ['Join-key matching model', 'INNER, LEFT, RIGHT, and FULL outcomes', 'Cardinality checks', 'Many-to-many multiplication and erased outer rows']],
+    ['Multi-Table Queries', ['Foreign-key paths', 'One-to-many and many-to-many', 'Bridge-table aggregation', 'Fan traps and ambiguous routes']],
+    ['Subqueries & CTEs', ['Scalar, list, and table subqueries', 'CTEs as named stages', 'Correlated subquery cost', 'Needless nesting and repeated logic']],
+    ['Dates, Text & Conditional Logic', ['Date types, intervals, extraction, and truncation', 'Text normalization and patterns', 'CASE business definitions', 'Dialect, timezone, and implicit casts']],
+    ['Set Operations', ['UNION versus UNION ALL', 'INTERSECT and EXCEPT', 'Column compatibility', 'Unexpected deduplication']],
+    ['SQL Data Quality Checks', ['Uniqueness, null, accepted-value, and range checks', 'Orphan checks', 'Source reconciliation totals', 'Exception-returning review queries']],
+    ['Query Review & Explain Basics', ['Readable clauses and staged reasoning', 'EXPLAIN plan vocabulary', 'Index and selectivity intuition', 'Correctness before speed']],
+    ['Phase Project — Repair Café Analysis', ['Visit, device, fault, volunteer, and parts grains', 'Join-cardinality map and query stages', 'Throughput, repeat visit, and parts-use metrics', 'Staffing and budget brief with reconciliation']],
+  ]},
+  { title: 'Advanced SQL & Analytical Data Modeling', subtitle: 'Express sequences, cohorts, windows, and governed metric-ready tables', goal: 'Build reusable SQL layers using windows, dimensional models, cohorts, and performance-aware design.', project: 'Community Bicycle Share Reliability Mart', user: 'a municipal mobility operations team', decision: 'where and when should rebalancing crews be repositioned?', days: [
+    ['Window Functions Mental Model', ['Rows retained within partitions', 'OVER, PARTITION BY, ORDER BY, and frame', 'ROW_NUMBER, RANK, and DENSE_RANK', 'Default frames and unstable ties']],
+    ['Running & Rolling Measures', ['Running totals', 'ROWS versus RANGE', 'Moving averages and incomplete windows', 'Irregular time and false smoothing']],
+    ['Lag, Lead & Change', ['LAG and LEAD', 'Absolute, percentage, and point change', 'First-row handling', 'Zero division and incompatible periods']],
+    ['Cohorts & Retention', ['Cohort definition and first event', 'Activity periods and cohort age', 'Retention denominators and censoring', 'Reactivation and incomplete cohorts']],
+    ['Funnels & Event Sequences', ['Eligibility and ordered steps', 'Conditional stage counts', 'Timing and repeated events', 'Changing denominators']],
+    ['Recursive CTEs & Hierarchies', ['Anchor and recursion', 'Parent-child traversal', 'Calendar generation', 'Cycles and runaway recursion']],
+    ['Facts, Dimensions & Grain', ['Fact events and declared grain', 'Dimensions and conformed meaning', 'Star versus normalized source', 'Mixed-grain facts']],
+    ['Slowly Changing Dimensions', ['Current versus historical questions', 'Type 1 and Type 2', 'Effective dates and as-of joins', 'Overlaps and late changes']],
+    ['Metric SQL & Semantic Contracts', ['Name, definition, grain, filters, and owner', 'Base measures and ratios', 'Reusable tested views', 'Conflicting denominators']],
+    ['Indexes & Performance', ['B-tree and composite order', 'Scan, seek, sort, join, and aggregate signals', 'Sargable predicates', 'Wrong-query optimization and write cost']],
+    ['Transactions & Safe Writes', ['ACID intuition', 'BEGIN, COMMIT, ROLLBACK, and staging', 'Upsert and idempotent loads', 'Partial and duplicate batches']],
+    ['Phase Project — Bicycle Reliability Mart', ['Trip, station, maintenance, and weather grains', 'Dimensional model and governed metrics', 'Windowed shortage and recovery analysis', 'Crew brief and changed-city transfer']],
+  ]},
+  { title: 'Descriptive Statistics, Probability & Sampling', subtitle: 'Quantify variation before making population claims', goal: 'Describe distributions, reason with probability, design samples, and communicate representativeness limits.', project: 'Rural Broadband Experience Survey', user: 'a regional digital-inclusion council', decision: 'which communities need measurement follow-up and infrastructure advocacy?', days: [
+    ['Centre, Spread & Shape', ['Mean, median, and mode', 'Range, IQR, variance, and standard deviation', 'Skew, tails, and modality', 'Misleading typical values']],
+    ['Percentiles & Robust Comparison', ['Quantile definitions', 'Z-scores', 'Median absolute deviation', 'Unlike distributions and percentile confusion']],
+    ['Covariance, Correlation & Confounding', ['Covariance direction and scale', 'Pearson and rank correlation', 'Confounding and restricted range', 'Causal claims and influential points']],
+    ['Probability Foundations', ['Outcomes, events, spaces, and complements', 'Addition and multiplication rules', 'Conditional probability and independence', 'Base rates and mutually-exclusive confusion']],
+    ['Bayes with Natural Frequencies', ['Prior, likelihood, evidence, and posterior', 'Frequency tables before formulas', 'Diagnostic and quality examples', 'Inverse probability errors']],
+    ['Random Variables & Expected Value', ['Discrete and continuous variables', 'Mass, density, and cumulative views', 'Expectation and variance', 'Expectation as guarantee']],
+    ['Common Distributions', ['Bernoulli and binomial assumptions', 'Normal distribution', 'Poisson counts and exposure', 'Shape-only distribution choice']],
+    ['Population, Sample & Selection', ['Target population, frame, sample, and unit', 'Coverage, nonresponse, and survivorship', 'Random selection', 'Large biased samples']],
+    ['Sampling Designs', ['Simple random and systematic', 'Stratified sampling', 'Cluster sampling', 'Design effects']],
+    ['Sampling Distributions & Standard Error', ['Repeated-sample variation', 'Standard error versus standard deviation', 'Central limit conditions', 'Dependence, skew, and false normality']],
+    ['Survey Measurement & Weighting', ['Question wording and recall', 'Response scales and missingness', 'Weights for representation', 'Extreme weights and false precision']],
+    ['Phase Project — Broadband Survey', ['Population, frame, and response design', 'Weighted and unweighted summaries', 'Coverage gaps and sensitivity', 'Advocacy brief with bounded claims']],
+  ]},
+  { title: 'Inference & Experiment Design', subtitle: 'Estimate effects without turning thresholds into truth machines', goal: 'Use intervals, tests, power, and A/B design with assumptions, practical significance, and guardrails.', project: 'Museum Wayfinding Experiment', user: 'a museum visitor-experience team', decision: 'whether a new sign system should expand beyond pilot galleries?', days: [
+    ['Estimation & Confidence Intervals', ['Point and interval estimates', 'Repeated-sampling interpretation', 'Intervals for means and proportions', 'Confidence level and false probability claims']],
+    ['Hypotheses & Test Logic', ['Null, alternative, statistic, and reference distribution', 'Conditional p-value meaning', 'One- versus two-sided plans', 'Accepting null and p-as-effect errors']],
+    ['Tests for Means', ['One-sample, paired, and independent designs', 't statistic and degrees of freedom', 'Welch comparison', 'Pairing and dependence failures']],
+    ['Tests for Proportions & Categories', ['Proportion comparisons', 'Chi-square tests', 'Expected counts', 'Absolute versus relative difference']],
+    ['Nonparametric & Resampling', ['Rank-based questions', 'Permutation tests', 'Bootstrap intervals', 'Wrong resampling units']],
+    ['Effect Size & Practical Significance', ['Mean and standardized difference', 'Risk difference and lift', 'Minimum worthwhile effect', 'Detectable but trivial results']],
+    ['Errors, Power & Sample Size', ['Type I and II errors', 'Power inputs', 'Minimum detectable effect', 'Observed-power misuse']],
+    ['Multiple Comparisons & Plans', ['Family-wise error', 'Bonferroni and FDR intuition', 'Primary and exploratory outcomes', 'Outcome switching and subgroup fishing']],
+    ['Experiment Units & Randomization', ['Treatment, control, experimental unit, and outcome unit', 'Assignment versus sampling', 'Blocking and cluster randomization', 'Interference and contamination']],
+    ['A/B Metrics & Guardrails', ['Primary behavior metric', 'Exposure and eligibility', 'Guardrail harm metrics', 'Novelty, ratios, and instrumentation']],
+    ['Experiment Analysis & Decision Memo', ['Balance and quality checks', 'Intent-to-treat effect', 'Decision thresholds', 'Peeking, exclusions, and inconclusive outcomes']],
+    ['Phase Project — Wayfinding Experiment', ['Gallery constraints and randomization', 'Success, time, and accessibility guardrails', 'Power and pre-specified analysis', 'Expand, revise, or gather-more decision']],
+  ]},
+  { title: 'Tableau, BI, Time Series & Metric Systems', subtitle: 'Deliver governed decision products and analyze time without ML forecasting', goal: 'Create trustworthy dashboards, define metrics, and perform decomposition and baseline time-series analysis.', project: 'Emergency Shelter Operations Command Centre', user: 'a regional shelter network coordinator', decision: 'how to adjust beds, supplies, and outreach over the next operating cycle?', days: [
+    ['Tableau Mental Model & Connections', ['Dimensions, measures, discrete, continuous, and marks', 'Live versus extract freshness', 'Relationships, joins, unions, and grain', 'Automatic aggregation traps']],
+    ['Core Views & Visual Encoding', ['Rows, columns, marks, and Show Me boundaries', 'Bars, lines, scatterplots, maps, and text', 'Sorts, groups, sets, bins, and hierarchies', 'Over-encoding and misleading axes']],
+    ['Filters & Order of Operations', ['Filter levels', 'Order-of-operations model', 'Top-N within context', 'Changed denominators and hidden missingness']],
+    ['Calculated Fields & LOD', ['Row versus aggregate calculations', 'Conditional, date, string, and null functions', 'FIXED, INCLUDE, and EXCLUDE', 'Aggregate/non-aggregate errors']],
+    ['Table Calculations', ['Partitioning and addressing', 'Running, percent, difference, and moving calculations', 'Sparse dates and restart boundaries', 'Wrong partitions']],
+    ['Dashboard Design & Interaction', ['User, decision, and reading order', 'Containers, sizing, and device layouts', 'Filter, highlight, parameter, and set actions', 'Action loops and hidden state']],
+    ['Accessibility, Performance & Publishing', ['Contrast, redundant encoding, alt text, and keyboard path', 'Performance recording and mark count', 'Permissions, refreshes, and ownership', 'Exposure and stale dashboards']],
+    ['Descriptive Time-Series Structure', ['Index, frequency, spacing, and completeness', 'Trend, seasonality, cycles, events, and residuals', 'Calendar effects', 'Smooth-line-as-forecast error']],
+    ['Rolling & Seasonal Baselines', ['Rolling mean, median, and variation', 'Year-over-year comparisons', 'Seasonal indexes and decomposition', 'Endpoints and incomplete periods']],
+    ['Scenarios & Baseline Limits', ['Last-value and seasonal-naive baselines', 'Assumption-driven ranges', 'Baseline backtesting', 'Structural breaks and extrapolation']],
+    ['Metric Trees & Data Contracts', ['Outcome, driver, input, and guardrail trees', 'Owner, grain, formula, filter, cadence, and source', 'Quality dimensions and reconciliation', 'Gaming and conflicting definitions']],
+    ['Phase Project — Shelter Command Centre', ['Occupancy, turn-away, supply, shift, and outreach grains', 'Governed metrics and quality status', 'Accessible Tableau dashboard and scenarios', 'Adjustment memo, refresh runbook, and fallback']],
+  ]},
+  { title: 'Professional Analytics, Communication & Portfolio', subtitle: 'Frame ambiguity, influence decisions, and prove readiness', goal: 'Own analysis from stakeholder question through quality review, communication, portfolio evidence, and interview defense.', project: 'Watershed Restoration Funding Portfolio', user: 'a river-basin grant committee', decision: 'which restoration proposals should be funded under a fixed budget and transparent criteria?', days: [
+    ['Problem Framing & Decision Contracts', ['Stakeholder, action, deadline, and reversibility', 'Question tree and unknown map', 'Scope, non-goals, constraints, and acceptance', 'Solution-first requests and missing owners']],
+    ['Requirements & Analytical Plans', ['Metric definitions and sources', 'Grain, population, window, and comparison', 'Risks, assumptions, dependencies, and reviews', 'Challengeable pre-result plan']],
+    ['Stakeholder Interviews & Domain Learning', ['Open, probing, confirming, and counterfactual questions', 'Vocabulary and workflow observation', 'Conflicting definitions', 'Playback notes without false consensus']],
+    ['Data Quality Incident Response', ['Detection, severity, scope, owner, and containment', 'Lineage and affected outputs', 'Correction, backfill, communication, and prevention', 'Silent fixes and unverified republishing']],
+    ['Executive Writing & Recommendations', ['Answer-first structure', 'Fact, interpretation, recommendation, and risk', 'Comparison, unit, period, and denominator', 'Hidden answers and false certainty']],
+    ['Data Storytelling & Presentation', ['Audience and narrative spine', 'Context → change → explanation → choice', 'Annotation and sequencing', 'Chart tours and unsupported drama']],
+    ['Ethics, Privacy & Fair Measurement', ['Purpose limitation and minimization', 'Sensitive attributes and proxies', 'Suppression, access, and retention', 'Fairness claims without affected-user context']],
+    ['Portfolio Case Study Architecture', ['Problem, user, decision, constraints, process, and outcome', 'Repository structure and reproduction', 'Quality evidence, alternatives, and limitations', 'Screenshots without inspectable reasoning']],
+    ['Python & Pandas Interview Practice', ['Trace-before-run prompts', 'Collection, function, file, NumPy, and Pandas diagnosis', 'Timed clean-and-aggregate case', 'Trade-off communication while coding']],
+    ['SQL, Excel & BI Interview Practice', ['SQL grain, joins, windows, and reconciliation', 'Excel formula, pivot, and audit diagnosis', 'Dashboard critique', 'Whiteboard metric definitions']],
+    ['Statistics & Product Case Practice', ['Descriptive versus inferential choice', 'Sampling and experiment diagnosis', 'Metric trees, guardrails, and A/B cases', 'Recommendations with inconclusive evidence']],
+    ['Final Capstone — Restoration Funding Portfolio', ['Transparent stakeholder-approved criteria', 'Python/SQL analysis, Excel review model, and Tableau view', 'Sensitivity, quality, privacy, and fairness review', 'Committee presentation, technical defense, and transfer']],
+  ]},
+];
+
+let nextDay = 1;
+export const damlPhases: Phase[] = specs.map((spec, index) => {
+  const first = nextDay;
+  const sections = spec.days.map((day, i) => makeSection(spec, day, nextDay++, i === spec.days.length - 1));
+  return { id: `phase${index + 1}`, number: index + 1, title: spec.title, subtitle: spec.subtitle, duration: '12 Days | ~49 Hours', days: `Days ${first}-${nextDay - 1}`, goal: spec.goal, icon: ['🔎','🐍','🧰','🧮','🧹','📗','🗃️','🏗️','🎲','🧪','📊','🎓'][index], color: ['cyan','blue','slate','indigo','teal','emerald','violet','purple','amber','orange','rose','green'][index], sections, checkpoint: { skills: spec.days.slice(0, 8).map(d => d[0]), milestone: `Independently deliver ${spec.project}, diagnose a planted failure, explain the decision logic, and transfer the workflow to a changed requirement.` } };
+});
+
+export const [phase1, phase2, phase3, phase4, phase5, phase6, phase7, phase8, phase9, phase10, phase11, phase12] = damlPhases;

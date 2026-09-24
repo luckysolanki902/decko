@@ -1,0 +1,1031 @@
+import { Phase } from '@/types';
+
+export const phase2: Phase = {
+  id: 'phase2',
+  number: 2,
+  title: 'JavaScript Essentials',
+  subtitle: 'Make things actually do things',
+  duration: '16 Days | ~68 Hours',
+  days: 'Days 13-28',
+  goal: 'Read, write, and reason about modern JavaScript. End the phase with two interactive apps shipped to the web.',
+  icon: '⚡',
+  color: 'yellow',
+  sections: [
+    {
+      id: 'day13',
+      title: 'Day 13: JS Runtimes & The Mental Model',
+      duration: '4 hours',
+      topics: [
+        {
+          id: 'install-node',
+          title: 'Install Node.js (the only install today)',
+          duration: '20 mins',
+          items: [
+            'Install nvm: curl from nvm-sh repo (no sudo)',
+            'nvm install --lts && nvm use --lts',
+            'node -v, npm -v',
+            'Why nvm beats the official installer',
+          ],
+        },
+        {
+          id: 'three-runtimes',
+          title: 'Three places JS runs',
+          duration: '20 mins',
+          items: [
+            'Browser console (DevTools)',
+            '<script> tag in HTML',
+            'Node REPL & node file.js',
+            'Same language, different APIs (no DOM in Node, no fs in browser)',
+          ],
+        },
+        {
+          id: 'variables',
+          title: 'Variables',
+          duration: '40 mins',
+          items: [
+            'let vs const (default to const)',
+            'Why var is dead (function scope, hoisting)',
+            'Block scope { } isolates let/const',
+            'Re-assignment vs mutation',
+          ],
+        },
+        {
+          id: 'primitives',
+          title: 'Primitive types',
+          duration: '60 mins',
+          items: [
+            'string, number, boolean, null, undefined, bigint, symbol',
+            'typeof and the typeof null === "object" trap',
+            'Number gotchas: NaN, Infinity, 0.1 + 0.2',
+            'Template literals: `${name}`',
+            'String methods worth knowing: includes, slice, split, trim, replaceAll',
+          ],
+        },
+        {
+          id: 'try-it',
+          title: 'Practice',
+          duration: '60 mins',
+          items: [
+            'Build 5 small calculations in the Node REPL',
+            'Format a date string with template literals',
+            'Round 0.1 + 0.2 to 1 decimal place using Number.toFixed',
+          ],
+        },
+      ],
+    },
+    {
+      id: 'day14',
+      title: 'Day 14: Functions & Scope',
+      duration: '4 hours',
+      topics: [
+        {
+          id: 'function-forms',
+          title: 'Three function forms',
+          duration: '40 mins',
+          items: [
+            'Declaration: function add(a, b) { }',
+            'Expression: const add = function(a, b) { }',
+            'Arrow: const add = (a, b) => a + b',
+            'When each fits (default to arrow for callbacks, declaration for top-level)',
+          ],
+        },
+        {
+          id: 'params',
+          title: 'Parameters',
+          duration: '30 mins',
+          items: [
+            'Defaults: function greet(name = "friend")',
+            'Rest: function sum(...nums)',
+            'Spread when calling: Math.max(...arr)',
+            'Avoid arguments object in modern code',
+          ],
+        },
+        {
+          id: 'closures',
+          title: 'Closures (the foundational concept)',
+          duration: '60 mins',
+          items: [
+            'Inner function "captures" outer variables',
+            'Why setTimeout in a loop confuses people (with var)',
+            'Closure as private state (counter factory example)',
+            'You\'ll use this every day in React',
+          ],
+        },
+        {
+          id: 'pure',
+          title: 'Pure vs impure functions',
+          duration: '30 mins',
+          items: [
+            'Same input → same output, no side effects = pure',
+            'Why pure is testable, predictable, parallelizable',
+            'Side effects: DOM, network, console, mutation',
+            'Push impure to the edges of your code',
+          ],
+        },
+        {
+          id: 'hof',
+          title: 'Higher-order functions',
+          duration: '40 mins',
+          items: [
+            'Functions that take or return functions',
+            'Setup for tomorrow\'s array methods',
+            'Tiny example: build a memoize() utility',
+          ],
+        },
+      ],
+    },
+    {
+      id: 'day15',
+      title: 'Day 15: Control Flow',
+      duration: '4 hours',
+      topics: [
+        {
+          id: 'conditionals',
+          title: 'Conditionals',
+          duration: '40 mins',
+          items: [
+            'if / else if / else',
+            'Ternary for one-line returns',
+            'switch + when to avoid (object lookup is usually cleaner)',
+            'Early returns over deep nesting',
+          ],
+        },
+        {
+          id: 'loops',
+          title: 'Loops',
+          duration: '40 mins',
+          items: [
+            'for (let i = 0; ...)',
+            'for...of for arrays',
+            'for...in for object keys (rarely; prefer Object.keys)',
+            'while + do...while',
+            'break / continue',
+          ],
+        },
+        {
+          id: 'truthy-falsy',
+          title: 'Truthy / falsy',
+          duration: '30 mins',
+          items: [
+            'The 6 falsy: false, 0, "", null, undefined, NaN',
+            'Everything else is truthy (including [] and {})',
+            'Boolean(value) for explicit conversion',
+            '!!value as a coerce-to-boolean trick',
+          ],
+        },
+        {
+          id: 'equality',
+          title: 'Equality',
+          duration: '30 mins',
+          items: [
+            '== triggers coercion (avoid)',
+            '=== compares without coercion (always use)',
+            'Object.is for NaN and -0 edge cases',
+            'Reference vs value equality for objects',
+          ],
+        },
+        {
+          id: 'practice',
+          title: 'Practice',
+          duration: '80 mins',
+          items: [
+            'FizzBuzz in 3 different styles (verbose, ternary, map)',
+            'Print first 50 primes',
+            'Build a guessing game in Node (use prompt-sync)',
+          ],
+        },
+      ],
+    },
+    {
+      id: 'day16',
+      title: 'Day 16: Arrays & Their Key Methods',
+      duration: '4 hours',
+      topics: [
+        {
+          id: 'array-basics',
+          title: 'Array basics',
+          duration: '30 mins',
+          items: [
+            'Literal []; access by index',
+            'length, push/pop, shift/unshift',
+            'Mutating vs non-mutating (the big confusion)',
+            'Array.from + Array.of constructors',
+          ],
+        },
+        {
+          id: 'big-four',
+          title: 'The big four',
+          duration: '70 mins',
+          items: [
+            'map: transform each element',
+            'filter: keep some elements',
+            'reduce: collapse to a single value',
+            'find: first element matching',
+            'These chain — practice chains',
+          ],
+        },
+        {
+          id: 'more-methods',
+          title: 'More methods worth knowing',
+          duration: '40 mins',
+          items: [
+            'some / every — boolean checks',
+            'flatMap — map then flatten',
+            'sort with comparator: arr.sort((a, b) => a - b)',
+            'includes / indexOf',
+            'New non-mutating versions: toSorted, toReversed, toSpliced (ES2023)',
+          ],
+        },
+        {
+          id: 'iteration',
+          title: 'Iteration patterns',
+          duration: '30 mins',
+          items: [
+            'forEach vs for...of (forEach can\'t break)',
+            'When for-loop beats methods (early exit, perf-sensitive)',
+            'Avoid forEach for async work',
+          ],
+        },
+        {
+          id: 'mini',
+          title: 'Mini build',
+          duration: '50 mins',
+          items: [
+            'Take a JSON array of products',
+            'Filter by category, sort by price, render as HTML cards',
+            'Pure functions only',
+          ],
+          project: {
+            title: 'Trail-condition digest',
+            description: 'Given a hardcoded array of trail reports with route, difficulty, status, and last inspection, filter open routes, sort by inspection age, and render a compact digest using array methods only. No loops written by hand.',
+            type: 'mini',
+          },
+        },
+      ],
+    },
+    {
+      id: 'day17',
+      title: 'Day 17: Objects, Destructuring, Spread',
+      duration: '4 hours',
+      topics: [
+        {
+          id: 'object-basics',
+          title: 'Object basics',
+          duration: '30 mins',
+          items: [
+            'Literal { key: value }',
+            'Dot vs bracket access (bracket for dynamic keys)',
+            'Shorthand: { name } instead of { name: name }',
+            'Computed keys: { [dynamic]: value }',
+          ],
+        },
+        {
+          id: 'destructuring',
+          title: 'Destructuring',
+          duration: '40 mins',
+          items: [
+            'Object: const { name, age } = user',
+            'Array: const [first, second] = arr',
+            'Defaults: const { name = "anon" } = user',
+            'Rename: const { name: fullName } = user',
+            'Nested + rest combined',
+          ],
+        },
+        {
+          id: 'spread-rest',
+          title: 'Spread & rest',
+          duration: '30 mins',
+          items: [
+            'Spread copies (shallow): { ...obj }, [...arr]',
+            'Override patterns: { ...defaults, ...userInput }',
+            'Rest in destructuring: const { name, ...rest } = user',
+            'Avoid deep-copy via JSON.stringify (use structuredClone)',
+          ],
+        },
+        {
+          id: 'object-statics',
+          title: 'Object statics',
+          duration: '30 mins',
+          items: [
+            'Object.keys / values / entries',
+            'Object.fromEntries (great with map/filter on entries)',
+            'Object.assign (mostly replaced by spread)',
+            'structuredClone for deep copies',
+          ],
+        },
+        {
+          id: 'json',
+          title: 'JSON',
+          duration: '50 mins',
+          items: [
+            'JSON.stringify / JSON.parse',
+            'JSON.stringify(obj, null, 2) for pretty printing',
+            'Reviver / replacer functions',
+            'Pitfalls: undefined, functions, Date, BigInt are lost',
+          ],
+        },
+      ],
+    },
+    {
+      id: 'day18',
+      title: 'Day 18: Classes & OOP in JS',
+      duration: '4 hours',
+      topics: [
+        {
+          id: 'why-classes',
+          title: 'Why classes exist (and why JS resisted them)',
+          duration: '20 mins',
+          items: [
+            'Objects with state + behaviour belong together — classes are a shape contract',
+            'JS uses prototypes under the hood; class syntax is sugar over them',
+            'When to reach for a class vs a plain object factory function',
+            'In modern web work: rare in UI code, common in domain models, errors, services',
+          ],
+        },
+        {
+          id: 'class-syntax',
+          title: 'Class syntax basics',
+          duration: '40 mins',
+          items: [
+            'class User { constructor(name) { this.name = name } }',
+            'Methods: defined inside the body, no function keyword, no commas',
+            'Instance fields: name = "anon" at class level',
+            'Getters / setters: get fullName() { ... }',
+            'new User("Lucky") — what `new` actually does (creates object, binds this, returns it)',
+          ],
+        },
+        {
+          id: 'this-and-binding',
+          title: 'this — the part everyone trips on',
+          duration: '30 mins',
+          items: [
+            '`this` is set by HOW the function is called, not where it was written',
+            'Inside a class method, `this` = the instance — usually',
+            'Lose it when you pass the method as a callback (setTimeout, addEventListener)',
+            'Two fixes: arrow-function class fields, or .bind(this) in constructor',
+            'Arrow functions inherit `this` from their enclosing scope (no own `this`)',
+          ],
+        },
+        {
+          id: 'inheritance',
+          title: 'Inheritance with extends + super',
+          duration: '40 mins',
+          items: [
+            'class AdminUser extends User { ... } — single-parent only',
+            'super(name) in constructor (mandatory before using `this`)',
+            'super.method() to call parent method',
+            'Override pattern: redeclare a method in the child',
+            'Composition usually beats inheritance — prefer plain objects + functions when you can',
+          ],
+        },
+        {
+          id: 'static-private',
+          title: 'Static members & private fields',
+          duration: '30 mins',
+          items: [
+            'static method/field — lives on the class itself, not instances (Math.max style)',
+            '#privateField — true privacy enforced by the language (since 2022, safe in 2026)',
+            'Naming convention _underscore = "soft private" (still accessible, just polite)',
+            'When to use static factories: User.fromJSON(data)',
+          ],
+        },
+        {
+          id: 'real-uses',
+          title: 'Where classes actually earn their keep in 2026',
+          duration: '40 mins',
+          items: [
+            'Custom error types: class ApiError extends Error { ... }',
+            'Domain models on the backend (User, Order, Invoice with methods like .total())',
+            'Service / client wrappers: class StripeClient { charge() { ... } }',
+            'Stateful utilities: class EventBus, class Cache',
+            'When NOT to use: React components (use functions), small data bags (use objects), single-call helpers (use functions)',
+          ],
+        },
+        {
+          id: 'prototypes-peek',
+          title: 'A 5-minute peek at prototypes',
+          duration: '20 mins',
+          items: [
+            'Every object has a hidden link to a prototype — that is the inheritance chain',
+            'class is just sugar: User.prototype.greet === instance.greet',
+            'You almost never write to .prototype directly anymore — but reading it in DevTools clarifies bugs',
+            'Object.create(proto) — the only time you reach for it is library internals',
+          ],
+        },
+        {
+          id: 'practice',
+          title: 'Practice',
+          duration: '60 mins',
+          items: [
+            'Build an EquipmentPool class with a private #loans array',
+            'Add methods: add(item), remove(id), total() getter, and static empty() factory',
+            'Throw a custom CartError (extending Error) when removing an unknown id',
+            'Run with node cart.js — no frameworks',
+          ],
+          project: {
+            title: 'Build an EquipmentPool class',
+            description: 'Model a lending pool with private #loans, checkout(item), returnItem(id), availableCount getter, and a static empty() factory. Throw a custom LoanError when returning an unknown loan. No frameworks — run it with Node.',
+            type: 'mini',
+          },
+        },
+      ],
+    },
+    {
+      id: 'day19',
+      title: 'Day 19: DOM Manipulation',
+      duration: '4 hours',
+      topics: [
+        {
+          id: 'querying',
+          title: 'Querying the DOM',
+          duration: '30 mins',
+          items: [
+            'document.querySelector / querySelectorAll',
+            'getElementById (still fast, still useful)',
+            'NodeList vs HTMLCollection (NodeList has forEach)',
+            'Why we don\'t use document.write',
+          ],
+        },
+        {
+          id: 'reading-changing',
+          title: 'Reading & changing',
+          duration: '40 mins',
+          items: [
+            'textContent vs innerText vs innerHTML (and XSS)',
+            'getAttribute / setAttribute',
+            'classList.add / remove / toggle / contains',
+            'style for one-offs; classes for everything else',
+          ],
+        },
+        {
+          id: 'creating',
+          title: 'Creating elements',
+          duration: '40 mins',
+          items: [
+            'document.createElement + append',
+            'Cloning templates with <template>',
+            'Insertion: append, prepend, before, after, replaceWith',
+            'innerHTML for static markup (escape user input)',
+          ],
+        },
+        {
+          id: 'data-attrs',
+          title: 'data-* attributes',
+          duration: '30 mins',
+          items: [
+            '<button data-id="42"> in HTML',
+            'Read via element.dataset.id',
+            'The right way to pass IDs to JS handlers',
+          ],
+        },
+        {
+          id: 'delegation',
+          title: 'Event delegation',
+          duration: '60 mins',
+          items: [
+            'One listener on the parent, check event.target',
+            'Why: dynamic children, fewer listeners, perf',
+            'closest() for finding the right ancestor',
+            'Apply the pattern to an incoming inspection-report queue',
+          ],
+          project: {
+            title: 'Inspection queue triage',
+            description: 'Render incoming inspection reports with resolve actions. Use one delegated click listener on the queue container and preserve the report ID through data attributes.',
+            type: 'mini',
+          },
+        },
+      ],
+    },
+    {
+      id: 'day20',
+      title: 'Day 20: Events',
+      duration: '4 hours',
+      topics: [
+        {
+          id: 'event-basics',
+          title: 'Event basics',
+          duration: '40 mins',
+          items: [
+            'addEventListener(type, handler, options)',
+            'Event object: target, currentTarget, type',
+            'preventDefault — what default actions exist (form submit, link click)',
+            'stopPropagation — when you actually need it',
+          ],
+        },
+        {
+          id: 'bubbling',
+          title: 'Bubbling vs capturing',
+          duration: '30 mins',
+          items: [
+            'Phase: capture → target → bubble',
+            'Default phase is bubble',
+            'options: { capture: true } to catch in capture phase',
+            'options: { once: true, passive: true } for special cases',
+          ],
+        },
+        {
+          id: 'forms',
+          title: 'Form events',
+          duration: '40 mins',
+          items: [
+            'submit (on the form, not the button)',
+            'input (every keystroke) vs change (on blur for some inputs)',
+            'FormData object — read all fields at once',
+          ],
+        },
+        {
+          id: 'keyboard',
+          title: 'Keyboard + debounce/throttle',
+          duration: '60 mins',
+          items: [
+            'keydown vs keypress vs keyup',
+            'event.key vs event.code',
+            'Build debounce(fn, ms) yourself',
+            'Build throttle(fn, ms) yourself',
+            'Use debounce on a search input',
+          ],
+        },
+        {
+          id: 'live-search',
+          title: 'Live search filter',
+          duration: '50 mins',
+          items: [
+            'Add a search input above the product grid',
+            'Filter visible cards on input (debounced)',
+            'Empty state when no matches',
+          ],
+          project: {
+            title: 'Live filter for public meeting records',
+            description: 'Filter a meeting-record index by committee, topic, or speaker in real time. Debounce by 200ms and render a useful no-matches state.',
+            type: 'mini',
+          },
+        },
+      ],
+    },
+    {
+      id: 'day21',
+      title: 'Day 21: Async JS — The Event Loop',
+      duration: '4 hours',
+      topics: [
+        {
+          id: 'sync-async',
+          title: 'Synchronous vs asynchronous',
+          duration: '30 mins',
+          items: [
+            'JavaScript is single-threaded',
+            '"Blocking" = the thread is busy and nothing else runs',
+            'Network, timers, file I/O are async — they don\'t block',
+          ],
+        },
+        {
+          id: 'event-loop',
+          title: 'The event loop',
+          duration: '60 mins',
+          items: [
+            'Call stack: where sync code runs',
+            'Task queue: setTimeout, I/O callbacks',
+            'Microtask queue: Promise.then, queueMicrotask',
+            'Microtasks drain before next task',
+            'Visualize: loupe.tools or Lydia Hallie diagrams',
+          ],
+        },
+        {
+          id: 'timers',
+          title: 'Timers & queueMicrotask',
+          duration: '40 mins',
+          items: [
+            'setTimeout(fn, 0) — minimum 4ms in browsers',
+            'setInterval (avoid for animation; prefer requestAnimationFrame)',
+            'clearTimeout / clearInterval',
+            'queueMicrotask for "after this tick"',
+          ],
+        },
+        {
+          id: 'callback-hell',
+          title: 'Callbacks → callback hell → Promises',
+          duration: '50 mins',
+          items: [
+            'Old style: nested callbacks',
+            'Why this collapses (error handling, ordering)',
+            'Promise as a value representing a future result',
+            'Tomorrow we use them properly',
+          ],
+        },
+      ],
+    },
+    {
+      id: 'day22',
+      title: 'Day 22: Promises & fetch',
+      duration: '4 hours',
+      topics: [
+        {
+          id: 'promise-states',
+          title: 'Promise states',
+          duration: '30 mins',
+          items: [
+            'pending → fulfilled (value) | rejected (reason)',
+            'A promise can settle once',
+            'new Promise((resolve, reject) => ...) — rare; usually use async',
+          ],
+        },
+        {
+          id: 'then-chain',
+          title: 'then / catch / finally',
+          duration: '40 mins',
+          items: [
+            '.then(value => ...) returns a new promise',
+            '.catch(err => ...) catches anywhere upstream',
+            '.finally(() => ...) for cleanup',
+            'Returning a promise from then chains it',
+          ],
+        },
+        {
+          id: 'promise-combinators',
+          title: 'Promise combinators',
+          duration: '40 mins',
+          items: [
+            'Promise.all — all succeed or first failure',
+            'Promise.allSettled — wait for everything regardless',
+            'Promise.race — first to settle wins',
+            'Promise.any — first to fulfill wins',
+          ],
+        },
+        {
+          id: 'fetch',
+          title: 'fetch API',
+          duration: '60 mins',
+          items: [
+            'fetch(url) returns Promise<Response>',
+            'response.ok, response.status, response.json()',
+            'POST: { method, headers, body: JSON.stringify(...) }',
+            'fetch only rejects on network error — check ok yourself',
+          ],
+        },
+        {
+          id: 'mini-api',
+          title: 'Hit a real API',
+          duration: '30 mins',
+          items: [
+            'Use a public people-in-space endpoint with no API key',
+            'Render results to the DOM',
+            'Handle the loading state (spinner / text)',
+          ],
+          project: {
+            title: 'Astronaut roster viewer',
+            description: 'Fetch the current people-in-space roster from a public API and render mission-grouped results. Show explicit loading, empty, stale, and failure states.',
+            type: 'mini',
+          },
+        },
+      ],
+    },
+    {
+      id: 'day23',
+      title: 'Day 23: async / await & Error Handling',
+      duration: '4 hours',
+      topics: [
+        {
+          id: 'async-await',
+          title: 'async / await rewrite',
+          duration: '50 mins',
+          items: [
+            'async function returns a promise',
+            'await pauses inside async functions only',
+            'Top-level await in modules',
+            'Rewrite yesterday\'s fetch with async/await',
+          ],
+        },
+        {
+          id: 'try-catch',
+          title: 'try / catch / finally',
+          duration: '40 mins',
+          items: [
+            'Wrap awaited code',
+            'Re-throw with context: throw new Error(`Fetch failed: ${e.message}`)',
+            'Result/error tuple pattern: const [data, error] = await safe(promise)',
+          ],
+        },
+        {
+          id: 'abort',
+          title: 'AbortController',
+          duration: '40 mins',
+          items: [
+            'const c = new AbortController(); fetch(url, { signal: c.signal })',
+            'c.abort() cancels in-flight fetches',
+            'Critical for search-as-you-type',
+          ],
+        },
+        {
+          id: 'three-states',
+          title: 'Loading / error / empty states',
+          duration: '50 mins',
+          items: [
+            'The three you always forget',
+            'Build a tiny "request status" reducer',
+            'Apply to the astronaut roster — never a blank screen',
+          ],
+        },
+      ],
+    },
+    {
+      id: 'day24',
+      title: 'Day 24: Storage, Dates, Numbers, Regex',
+      duration: '4 hours',
+      topics: [
+        {
+          id: 'storage',
+          title: 'localStorage & sessionStorage',
+          duration: '40 mins',
+          items: [
+            'setItem / getItem / removeItem / clear',
+            'String-only — JSON.stringify on the way in',
+            'Quota ~5–10MB',
+            'Use for non-sensitive prefs only (no tokens)',
+          ],
+        },
+        {
+          id: 'dates',
+          title: 'Dates (the painful part)',
+          duration: '40 mins',
+          items: [
+            'new Date() — months are 0-indexed (yes, really)',
+            'Date.now() for timestamps',
+            'Why we install date-fns or use Temporal',
+            'Time zones are hard — store UTC, format on display',
+          ],
+        },
+        {
+          id: 'intl',
+          title: 'Intl APIs',
+          duration: '30 mins',
+          items: [
+            'Intl.NumberFormat — currency, decimals, locales',
+            'Intl.DateTimeFormat — readable dates',
+            'Intl.RelativeTimeFormat — "2 hours ago"',
+            'Intl.ListFormat — "a, b, and c"',
+          ],
+        },
+        {
+          id: 'regex',
+          title: 'Regex (just enough)',
+          duration: '60 mins',
+          items: [
+            '/pattern/flags syntax; flags g, i, m, s',
+            'Character classes: \\d \\w \\s . [abc]',
+            'Quantifiers: + * ? {n,m}',
+            'Anchors: ^ $',
+            'Capture groups (parens) and replace with $1',
+            'regex101.com — your friend',
+          ],
+        },
+        {
+          id: 'practice',
+          title: 'Practice',
+          duration: '30 mins',
+          items: [
+            'Validate an email (cheap regex)',
+            'Format a phone number 1234567890 → (123) 456-7890',
+            'Parse a date in dd/mm/yyyy and reformat',
+          ],
+        },
+      ],
+    },
+    {
+      id: 'day25',
+      title: 'Day 25: Modules, Bundlers, Tooling',
+      duration: '4 hours',
+      topics: [
+        {
+          id: 'modules',
+          title: 'ES modules',
+          duration: '30 mins',
+          items: [
+            'export / export default / import',
+            'Named vs default — use named for libraries',
+            'Tree-shaking only works with named exports',
+            'In browser via <script type="module">',
+          ],
+        },
+        {
+          id: 'vite',
+          title: 'Vite from zero',
+          duration: '40 mins',
+          items: [
+            'npm create vite@latest',
+            'Why bundlers exist: node_modules → one file',
+            'Dev server with HMR',
+            'Production build: npm run build → dist/',
+          ],
+        },
+        {
+          id: 'package-json',
+          title: 'package.json essentials',
+          duration: '30 mins',
+          items: [
+            'name, version, type: "module"',
+            'scripts (and how npm run works)',
+            'dependencies vs devDependencies',
+            'engines field for Node version pinning',
+          ],
+        },
+        {
+          id: 'lint-format',
+          title: 'ESLint + Prettier',
+          duration: '60 mins',
+          items: [
+            'npm install -D eslint @eslint/js prettier eslint-config-prettier',
+            'eslint.config.js with recommended rules',
+            'Prettier config (.prettierrc) — keep it minimal',
+            'Format-on-save in VS Code',
+          ],
+        },
+        {
+          id: 'gitignore',
+          title: '.gitignore discipline',
+          duration: '20 mins',
+          items: [
+            'node_modules, dist, .env, .DS_Store',
+            'Per-project additions',
+            'Why never commit lockfiles to .gitignore',
+          ],
+        },
+      ],
+    },
+    {
+      id: 'day26',
+      title: 'Day 26: Practice — Build 10 Tiny Products',
+      duration: '5 hours',
+      topics: [
+        {
+          id: 'timing-tools',
+          title: 'Timing tools (Tasks 1–3)',
+          duration: '85 mins',
+          items: [
+            'Living clock — Date, setInterval, padStart, Intl date line, 12/24h toggle',
+            'Stopwatch — Date.now() deltas (no tick counting), pause/resume, laps with fastest/slowest',
+            'Pomodoro — focus/break state machine, progress bar, session count in localStorage',
+          ],
+        },
+        {
+          id: 'state-strings',
+          title: 'State & strings (Tasks 4–5)',
+          duration: '55 mins',
+          items: [
+            'Quiz game — questions as data, render-from-state, one delegated listener, results + play again',
+            'Password generator — charset guarantees, shuffle, strength meter, clipboard copy',
+          ],
+        },
+        {
+          id: 'forms-data-apps',
+          title: 'Forms & data apps (Tasks 6–8)',
+          duration: '85 mins',
+          items: [
+            'Signup form — live validation with "touched" UX, strength bar, FormData + toast',
+            'Expense tracker — state array, delegated delete, Intl INR total, safe localStorage',
+            'Specimen label board — debounced autosave, delegated editing, "Saved ✓" indicator',
+          ],
+        },
+        {
+          id: 'network-tasks',
+          title: 'The network (Tasks 9–10)',
+          duration: '75 mins',
+          items: [
+            'Package-status lookup — fetch, 404 vs network error, retry, disabled-while-loading',
+            'Duty roster — fetch-on-load, skeleton shimmer, debounced in-memory search, empty state',
+          ],
+          project: {
+            title: 'Ten shipped interface instruments',
+            description:
+              'Ten single-page instruments — tide clock, lap marshal, medication interval timer, evacuation drill quiz, recovery-code generator, volunteer intake validator, water-usage ledger, specimen label board, package-status lookup, and duty roster. Each has a detailed spec, observable acceptance criteria, hidden hints, and a solution that unlocks only after a real attempt.',
+            type: 'mini',
+          },
+        },
+      ],
+    },
+    {
+      id: 'day27',
+      title: 'Day 27: Project — Build the Community Pantry Dispatch Board',
+      duration: '6 hours',
+      topics: [
+        {
+          id: 'spec',
+          title: 'Spec + live demo (solution locked at the end)',
+          duration: '20 mins',
+          items: [
+            'Add / edit / delete / mark complete',
+            'Filter: all / active / done',
+            'Persist to localStorage',
+            'Keyboard: Enter adds, Esc cancels edit',
+            'Smooth add/remove animation',
+            'Dark mode + mobile-first',
+          ],
+        },
+        {
+          id: 'architecture',
+          title: 'Architecture sketch',
+          duration: '30 mins',
+          items: [
+            'State shape: [{ id, text, done }]',
+            'render() reads state and rebuilds',
+            'Or: target only changed nodes (your call)',
+            'Pure helpers: receiveParcel, assignParcel, advanceStatus, removeParcel',
+          ],
+        },
+        {
+          id: 'build',
+          title: 'Build',
+          duration: '4 hours',
+          items: [
+            'Vite + Tailwind + vanilla TS',
+            'Commit small, often',
+            'Test edge cases: empty list, duplicate text, long text',
+          ],
+          project: {
+            title: 'Community Pantry Dispatch Board',
+            description: 'Coordinate incoming food parcels through received, packed, assigned, and collected states. Support edits, deletion with undo, urgency and status filters, local persistence, keyboard operation, motion-safe feedback, and a high-contrast theme.',
+            type: 'project',
+          },
+        },
+        {
+          id: 'polish',
+          title: 'Polish & commit',
+          duration: '70 mins',
+          items: [
+            'Empty state with charm',
+            'Counters: "3 of 7 done"',
+            'Mobile responsive',
+          ],
+        },
+      ],
+    },
+    {
+      id: 'day28',
+      title: 'Day 28: Project — Public Art Walk Planner + Ship Both',
+      duration: '6 hours',
+      topics: [
+        {
+          id: 'art-walk-spec',
+          title: 'Public Art Walk Planner spec',
+          duration: '20 mins',
+          items: [
+            'Search a civic public-art feed by artist, neighborhood, or medium',
+            'Render cover, title, author, first publish year, and edition count with safe fallbacks',
+            'Paginate result pages and retain the current query in the URL',
+            'Loading / error / empty states explicit',
+            'Save a personal Want to Read shelf in localStorage',
+          ],
+        },
+        {
+          id: 'art-walk-build',
+          title: 'Build',
+          duration: '4 hours',
+          items: [
+            'Vite + Tailwind + TS',
+            'Use AbortController for fast typing',
+            'Format edition counts and first-publish years with Intl',
+            'Use image fallbacks and textContent for untrusted API data',
+          ],
+          project: {
+            title: 'Public Art Walk Planner',
+            description: 'Search a civic public-art dataset by artist, neighborhood, or medium; render accessible works, cancel stale searches, paginate results, and save an ordered walking shortlist locally. Include loading, empty, error, retry, image-fallback, and mobile route-summary states.',
+            type: 'project',
+          },
+        },
+        {
+          id: 'ship-both',
+          title: 'Ship both apps',
+          duration: '90 mins',
+          items: [
+            'Deploy both to Vercel',
+            'Add an evidence README with screenshots and keyboard-flow notes',
+            'Lighthouse pass on each',
+          ],
+        },
+        {
+          id: 'reflect',
+          title: 'Reflect',
+          duration: '30 mins',
+          items: [
+            'What was hardest? Write 3 lines in a learning journal',
+            'What state pattern did you transfer from the dispatch board?',
+            'What would you do differently next time?',
+          ],
+          project: {
+            title: 'Phase 2 Capstone — Two deployed civic tools',
+            description: 'The Pantry Dispatch Board and Public Art Walk Planner are both live, polished, keyboard-operable, failure-aware, and documented with evidence of the state and async decisions you made.',
+            type: 'capstone',
+          },
+        },
+      ],
+    },
+  ],
+  checkpoint: {
+    skills: [
+      'Modern JS: closures, async/await, modules, ES2023+ features',
+      'Comfortable with array methods + functional patterns',
+      'DOM manipulation + event delegation',
+      'Fetch API with proper loading/error/empty states',
+      'Vite + ESLint + Prettier project setup',
+    ],
+    milestone: 'Two interactive apps in production. You can build small frontend apps end-to-end without React.',
+  },
+};

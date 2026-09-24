@@ -1,0 +1,420 @@
+2025-03-01 08:00:02,373 - instagram - INFO - user=kate_design action=view_post post_id=46463 ip=10.0.0.12 status=success latency_ms=130
+2025-03-01 08:00:03,433 - instagram - INFO - user=kate_design action=unfollow target=nick_code ip=192.168.1.37 status=success latency_ms=37
+2025-03-01 08:00:05,873 - instagram - INFO - user=rachel_w action=view_story story_id=s6635 ip=10.0.0.29 status=success latency_ms=124
+2025-03-01 08:00:06,295 - instagram - INFO - user=mia_art action=view_post post_id=38657 ip=10.0.0.7 status=success latency_ms=73
+2025-03-01 08:00:08,787 - instagram - INFO - user=bob_smith action=login ip=172.16.3.5 status=success latency_ms=84
+2025-03-01 08:00:08,884 - instagram - INFO - user=carol_90 action=unlike_post post_id=13905 ip=10.0.0.10 status=success latency_ms=50
+2025-03-01 08:00:10,026 - instagram - WARNING - user=dave_jones action=session_expired ip=172.16.0.9 status=expired latency_ms=0
+2025-03-01 08:00:13,023 - instagram - INFO - user=kate_design action=view_post post_id=13905 ip=192.168.1.24 status=success latency_ms=10
+2025-03-01 08:00:15,634 - instagram - INFO - user=iris_ml action=add_comment post_id=39256 ip=88.8.8.8 status=success latency_ms=53
+2025-03-01 08:00:17,893 - instagram - INFO - user=jake_99 action=follow target=grace_liu ip=172.16.3.2 status=success latency_ms=40
+2025-03-01 08:00:18,401 - instagram - INFO - user=quinn_f action=login ip=172.16.4.3 status=success latency_ms=32
+2025-03-01 08:00:18,688 - instagram - INFO - user=leo_run action=disable_2fa ip=172.16.3.7 status=success latency_ms=111
+2025-03-01 08:00:20,919 - instagram - INFO - user=harry_x action=upload_photo ip=172.16.3.7 size_mb=11.9 status=success latency_ms=341
+2025-03-01 08:00:22,702 - instagram - INFO - user=eve_photo action=follow target=sam_tech ip=192.168.1.26 status=success latency_ms=97
+2025-03-01 08:00:25,413 - instagram - INFO - user=grace_liu action=upload_photo ip=172.16.4.4 size_mb=9.9 status=success latency_ms=1575
+2025-03-01 08:00:27,312 - instagram - WARNING - user=leo_run action=session_expired ip=10.0.0.17 status=expired latency_ms=0
+2025-03-01 08:00:29,630 - instagram - INFO - user=dave_jones action=view_reel reel_id=r4432 ip=192.168.1.41 status=success latency_ms=85
+2025-03-01 08:00:29,921 - instagram - INFO - user=harry_x action=view_post post_id=36062 ip=10.0.0.36 status=success latency_ms=90
+2025-03-01 08:00:32,076 - instagram - CRITICAL - user=harry_x action=rate_limit_triggered ip=45.33.32.156 requests_per_min=272 status=blocked latency_ms=0
+2025-03-01 08:00:34,464 - instagram - INFO - user=harry_x action=search query=sunset ip=192.168.1.45 status=success results=276 latency_ms=63
+2025-03-01 08:00:35,293 - instagram - INFO - user=sam_tech action=view_reel reel_id=r1916 ip=10.0.0.21 status=success latency_ms=62
+2025-03-01 08:00:38,101 - instagram - INFO - user=dave_jones action=unfollow target=mia_art ip=192.168.1.22 status=success latency_ms=26
+2025-03-01 08:00:38,935 - instagram - INFO - user=dave_jones action=like_post post_id=21395 ip=192.168.1.17 status=success latency_ms=30
+2025-03-01 08:00:40,008 - instagram - INFO - user=grace_liu action=add_comment post_id=14165 ip=10.0.0.29 status=success latency_ms=99
+2025-03-01 08:00:42,312 - instagram - INFO - user=carol_90 action=logout ip=10.0.0.17 status=success latency_ms=37
+2025-03-01 08:00:43,043 - instagram - WARNING - user=dave_jones action=follow target=sam_tech ip=192.168.1.16 status=failed error=user_not_found latency_ms=30
+2025-03-01 08:00:43,767 - instagram - INFO - user=nick_code action=add_comment post_id=68878 ip=10.0.0.23 status=success latency_ms=47
+2025-03-01 08:00:45,680 - instagram - INFO - user=mia_art action=disable_2fa ip=192.168.1.10 status=success latency_ms=250
+2025-03-01 08:00:47,723 - instagram - INFO - user=jake_99 action=search query=coding ip=10.0.0.15 status=success results=338 latency_ms=213
+2025-03-01 08:00:49,993 - instagram - INFO - user=eve_photo action=view_post post_id=76237 ip=192.168.1.34 status=success latency_ms=104
+2025-03-01 08:00:52,102 - instagram - INFO - user=bob_smith action=view_post post_id=76237 ip=172.16.1.8 status=success latency_ms=71
+2025-03-01 08:00:52,432 - instagram - INFO - user=quinn_f action=login ip=192.168.1.30 status=success latency_ms=53
+2025-03-01 08:00:54,815 - instagram - INFO - user=tina_fit action=search query=sunset ip=192.168.1.18 status=success results=206 latency_ms=60
+2025-03-01 08:00:57,006 - instagram - INFO - user=harry_x action=unfollow target=carol_90 ip=10.0.0.35 status=success latency_ms=92
+2025-03-01 08:00:58,143 - instagram - INFO - user=kate_design action=view_story story_id=s7224 ip=172.16.4.5 status=success latency_ms=40
+2025-03-01 08:00:58,490 - instagram - INFO - user=mia_art action=search query=gym ip=192.168.1.26 status=success results=234 latency_ms=110
+2025-03-01 08:01:00,612 - instagram - INFO - user=alice_dev action=follow target=tina_fit ip=10.0.0.19 status=success latency_ms=47
+2025-03-01 08:01:01,662 - instagram - ERROR - user=iris_ml action=view_post ip=192.168.1.26 status=failed error=db_timeout latency_ms=10202
+2025-03-01 08:01:04,217 - instagram - INFO - user=leo_run action=login ip=192.168.1.46 status=success latency_ms=68
+2025-03-01 08:01:04,691 - instagram - INFO - user=quinn_f action=search query=coding ip=192.168.1.11 status=success results=153 latency_ms=199
+2025-03-01 08:01:05,377 - instagram - INFO - user=eve_photo action=login ip=192.168.1.43 status=success latency_ms=100
+2025-03-01 08:01:07,497 - instagram - INFO - user=iris_ml action=follow target=leo_run ip=192.168.1.46 status=success latency_ms=53
+2025-03-01 08:01:10,145 - instagram - CRITICAL - user=peter_builds action=rate_limit_triggered ip=88.8.8.8 requests_per_min=294 status=blocked latency_ms=0
+2025-03-01 08:01:10,730 - instagram - INFO - user=nick_code action=view_post post_id=21395 ip=172.16.3.1 status=success latency_ms=108
+2025-03-01 08:01:12,531 - instagram - INFO - user=iris_ml action=send_dm target=sam_tech ip=192.168.1.30 status=success latency_ms=110
+2025-03-01 08:01:12,728 - instagram - WARNING - user=rachel_w action=login ip=192.168.1.11 status=failed error=wrong_password attempt=2 latency_ms=54
+2025-03-01 08:01:12,941 - instagram - INFO - user=leo_run action=upload_reel ip=10.0.0.35 size_mb=7.7 status=success latency_ms=2041
+2025-03-01 08:01:15,284 - instagram - INFO - user=leo_run action=search query=food ip=192.168.1.36 status=success results=181 latency_ms=229
+2025-03-01 08:01:17,022 - instagram - INFO - user=nick_code action=follow target=eve_photo ip=88.8.8.8 status=success latency_ms=42
+2025-03-01 08:01:19,815 - instagram - INFO - user=alice_dev action=send_dm target=leo_run ip=192.168.1.32 status=success latency_ms=72
+2025-03-01 08:01:20,023 - instagram - INFO - user=harry_x action=login ip=192.168.1.44 status=success latency_ms=78
+2025-03-01 08:01:21,005 - instagram - INFO - user=peter_builds action=view_reel reel_id=r5010 ip=192.168.1.38 status=success latency_ms=49
+2025-03-01 08:01:21,339 - instagram - INFO - user=harry_x action=search query=art ip=192.168.1.13 status=success results=168 latency_ms=101
+2025-03-01 08:01:22,458 - instagram - WARNING - user=iris_ml action=unfollow target=nick_code ip=10.0.0.5 status=failed error=user_not_found latency_ms=22
+2025-03-01 08:01:22,952 - instagram - INFO - user=frank_real action=disable_2fa ip=10.0.0.35 status=success latency_ms=59
+2025-03-01 08:01:25,485 - instagram - INFO - user=tina_fit action=unlike_post post_id=64987 ip=10.0.0.16 status=success latency_ms=42
+2025-03-01 08:01:25,716 - instagram - INFO - user=quinn_f action=like_post post_id=76237 ip=192.168.1.24 status=success latency_ms=31
+2025-03-01 08:01:28,512 - instagram - INFO - user=nick_code action=add_comment post_id=64987 ip=192.168.1.10 status=success latency_ms=132
+2025-03-01 08:01:29,847 - instagram - INFO - user=grace_liu action=unlike_post post_id=83563 ip=10.0.0.7 status=success latency_ms=54
+2025-03-01 08:01:32,628 - instagram - CRITICAL - user=dave_jones action=rate_limit_triggered ip=198.211.127.116 requests_per_min=516 status=blocked latency_ms=0
+2025-03-01 08:01:34,400 - instagram - INFO - user=nick_code action=like_post post_id=81482 ip=10.0.0.2 status=success latency_ms=27
+2025-03-01 08:01:36,781 - instagram - INFO - user=mia_art action=send_dm target=frank_real ip=172.16.0.8 status=success latency_ms=98
+2025-03-01 08:01:39,206 - instagram - INFO - user=jake_99 action=upload_photo ip=10.0.0.12 size_mb=5.4 status=success latency_ms=1809
+2025-03-01 08:01:40,131 - instagram - INFO - user=tina_fit action=unlike_post post_id=13905 ip=172.16.0.5 status=success latency_ms=58
+2025-03-01 08:01:41,343 - instagram - INFO - user=quinn_f action=view_profile target=frank_real ip=10.0.0.21 status=success latency_ms=20
+2025-03-01 08:01:44,148 - instagram - INFO - user=quinn_f action=follow target=kate_design ip=172.16.0.6 status=success latency_ms=50
+2025-03-01 08:01:44,298 - instagram - INFO - user=jake_99 action=logout ip=192.168.1.38 status=success latency_ms=14
+2025-03-01 08:01:46,045 - instagram - INFO - user=bob_smith action=change_password ip=192.168.1.41 status=success latency_ms=166
+2025-03-01 08:01:47,094 - instagram - INFO - user=sam_tech action=search query=art ip=192.168.1.34 status=success results=253 latency_ms=132
+2025-03-01 08:01:48,040 - instagram - INFO - user=eve_photo action=search query=food ip=172.16.0.5 status=success results=398 latency_ms=138
+2025-03-01 08:01:50,373 - instagram - ERROR - user=frank_real action=send_dm ip=172.16.2.6 status=failed error=db_timeout latency_ms=3411
+2025-03-01 08:01:52,326 - instagram - INFO - user=harry_x action=report_post post_id=13905 ip=172.16.4.3 status=success latency_ms=28
+2025-03-01 08:01:54,202 - instagram - INFO - user=quinn_f action=unfollow target=olivia_travels ip=10.0.0.32 status=success latency_ms=90
+2025-03-01 08:01:55,264 - instagram - INFO - user=frank_real action=report_post post_id=13905 ip=172.16.1.8 status=success latency_ms=36
+2025-03-01 08:01:56,293 - instagram - INFO - user=iris_ml action=view_profile target=quinn_f ip=172.16.2.2 status=success latency_ms=90
+2025-03-01 08:01:57,718 - instagram - INFO - user=iris_ml action=login ip=10.0.0.17 status=success latency_ms=64
+2025-03-01 08:02:00,661 - instagram - INFO - user=kate_design action=upload_photo ip=172.16.3.9 size_mb=9.5 status=success latency_ms=512
+2025-03-01 08:02:00,966 - instagram - INFO - user=grace_liu action=unlike_post post_id=21395 ip=192.168.1.18 status=success latency_ms=41
+2025-03-01 08:02:03,374 - instagram - INFO - user=grace_liu action=like_post post_id=87236 ip=172.16.3.1 status=success latency_ms=69
+2025-03-01 08:02:05,140 - instagram - INFO - user=mia_art action=login ip=10.0.0.22 status=success latency_ms=79
+2025-03-01 08:02:06,088 - instagram - INFO - user=rachel_w action=send_dm target=harry_x ip=172.16.1.8 status=success latency_ms=82
+2025-03-01 08:02:07,794 - instagram - INFO - user=iris_ml action=add_comment post_id=65302 ip=10.0.0.16 status=success latency_ms=126
+2025-03-01 08:02:07,954 - instagram - WARNING - user=frank_real action=add_comment post_id=42098 ip=172.16.3.2 status=failed error=comment_blocked latency_ms=54
+2025-03-01 08:02:09,895 - instagram - INFO - user=mia_art action=upload_photo ip=10.0.0.36 size_mb=10.6 status=success latency_ms=1975
+2025-03-01 08:02:11,283 - instagram - INFO - user=frank_real action=view_reel reel_id=r3803 ip=192.168.1.16 status=success latency_ms=68
+2025-03-01 08:02:12,472 - instagram - WARNING - user=kate_design action=session_expired ip=172.16.2.1 status=expired latency_ms=0
+2025-03-01 08:02:12,601 - instagram - INFO - user=nick_code action=logout ip=192.168.1.42 status=success latency_ms=25
+2025-03-01 08:02:15,313 - instagram - INFO - user=rachel_w action=disable_2fa ip=192.168.1.16 status=success latency_ms=107
+2025-03-01 08:02:15,490 - instagram - ERROR - user=carol_90 action=view_post ip=172.16.2.3 status=failed error=db_timeout latency_ms=9178
+2025-03-01 08:02:16,164 - instagram - INFO - user=harry_x action=logout ip=192.168.1.35 status=success latency_ms=29
+2025-03-01 08:02:18,118 - instagram - INFO - user=harry_x action=add_comment post_id=46048 ip=192.168.1.26 status=success latency_ms=67
+2025-03-01 08:02:18,838 - instagram - INFO - user=iris_ml action=like_post post_id=88907 ip=172.16.2.2 status=success latency_ms=64
+2025-03-01 08:02:20,512 - instagram - INFO - user=jake_99 action=upload_reel ip=192.168.1.23 size_mb=21.8 status=success latency_ms=968
+2025-03-01 08:02:23,364 - instagram - INFO - user=grace_liu action=follow target=iris_ml ip=192.168.1.19 status=success latency_ms=58
+2025-03-01 08:02:25,596 - instagram - WARNING - user=tina_fit action=login ip=172.16.2.7 status=failed error=wrong_password attempt=1 latency_ms=42
+2025-03-01 08:02:27,366 - instagram - INFO - user=nick_code action=unlike_post post_id=38657 ip=172.16.0.6 status=success latency_ms=15
+2025-03-01 08:02:28,042 - instagram - INFO - user=peter_builds action=unlike_post post_id=87397 ip=192.168.1.23 status=success latency_ms=60
+2025-03-01 08:02:30,296 - instagram - INFO - user=nick_code action=send_dm target=iris_ml ip=192.168.1.32 status=success latency_ms=98
+2025-03-01 08:02:31,351 - instagram - INFO - user=peter_builds action=unlike_post post_id=95181 ip=10.0.0.20 status=success latency_ms=35
+2025-03-01 08:02:32,399 - instagram - WARNING - user=carol_90 action=session_expired ip=192.168.1.45 status=expired latency_ms=0
+2025-03-01 08:02:33,193 - instagram - INFO - user=olivia_travels action=unfollow target=mia_art ip=10.0.0.33 status=success latency_ms=61
+2025-03-01 08:02:35,684 - instagram - INFO - user=peter_builds action=unlike_post post_id=98696 ip=192.168.1.37 status=success latency_ms=32
+2025-03-01 08:02:38,683 - instagram - WARNING - user=iris_ml action=login ip=10.0.0.32 status=failed error=wrong_password attempt=1 latency_ms=35
+2025-03-01 08:02:40,568 - instagram - INFO - user=nick_code action=upload_photo ip=10.0.0.23 size_mb=15.7 status=success latency_ms=1205
+2025-03-01 08:02:41,872 - instagram - INFO - user=alice_dev action=view_reel reel_id=r6313 ip=192.168.1.21 status=success latency_ms=41
+2025-03-01 08:02:44,176 - instagram - INFO - user=sam_tech action=add_comment post_id=38657 ip=10.0.0.8 status=success latency_ms=135
+2025-03-01 08:02:45,170 - instagram - INFO - user=kate_design action=search query=gym ip=10.0.0.6 status=success results=156 latency_ms=94
+2025-03-01 08:02:48,046 - instagram - INFO - user=dave_jones action=view_post post_id=95181 ip=172.16.1.5 status=success latency_ms=78
+2025-03-01 08:02:50,510 - instagram - INFO - user=frank_real action=view_reel reel_id=r9751 ip=192.168.1.34 status=success latency_ms=102
+2025-03-01 08:02:51,773 - instagram - INFO - user=quinn_f action=view_post post_id=38893 ip=10.0.0.37 status=success latency_ms=34
+2025-03-01 08:02:52,341 - instagram - INFO - user=harry_x action=login ip=10.0.0.7 status=success latency_ms=98
+2025-03-01 08:02:52,908 - instagram - INFO - user=iris_ml action=disable_2fa ip=192.168.1.15 status=success latency_ms=228
+2025-03-01 08:02:55,309 - instagram - WARNING - user=peter_builds action=session_expired ip=192.168.1.23 status=expired latency_ms=0
+2025-03-01 08:02:56,393 - instagram - INFO - user=jake_99 action=add_comment post_id=21395 ip=10.0.0.21 status=success latency_ms=46
+2025-03-01 08:02:58,457 - instagram - INFO - user=peter_builds action=logout ip=192.168.1.24 status=success latency_ms=22
+2025-03-01 08:02:59,751 - instagram - INFO - user=carol_90 action=follow target=bob_smith ip=10.0.0.34 status=success latency_ms=92
+2025-03-01 08:03:02,242 - instagram - INFO - user=carol_90 action=login ip=192.168.1.41 status=success latency_ms=107
+2025-03-01 08:03:04,105 - instagram - INFO - user=tina_fit action=view_profile target=mia_art ip=192.168.1.38 status=success latency_ms=67
+2025-03-01 08:03:06,652 - instagram - INFO - user=jake_99 action=unfollow target=olivia_travels ip=172.16.3.5 status=success latency_ms=27
+2025-03-01 08:03:09,407 - instagram - INFO - user=dave_jones action=send_dm target=harry_x ip=172.16.4.7 status=success latency_ms=53
+2025-03-01 08:03:09,467 - instagram - INFO - user=carol_90 action=view_story story_id=s7924 ip=192.168.1.30 status=success latency_ms=30
+2025-03-01 08:03:10,465 - instagram - INFO - user=nick_code action=search query=music ip=10.0.0.18 status=success results=149 latency_ms=38
+2025-03-01 08:03:11,471 - instagram - INFO - user=jake_99 action=view_reel reel_id=r5374 ip=172.16.1.3 status=success latency_ms=97
+2025-03-01 08:03:13,262 - instagram - INFO - user=iris_ml action=view_profile target=tina_fit ip=172.16.2.4 status=success latency_ms=35
+2025-03-01 08:03:13,894 - instagram - INFO - user=dave_jones action=view_post post_id=46463 ip=10.0.0.30 status=success latency_ms=44
+2025-03-01 08:03:15,126 - instagram - INFO - user=carol_90 action=login ip=192.168.1.17 status=success latency_ms=102
+2025-03-01 08:03:16,291 - instagram - INFO - user=olivia_travels action=add_comment post_id=81482 ip=192.168.1.25 status=success latency_ms=160
+2025-03-01 08:03:18,110 - instagram - INFO - user=quinn_f action=add_comment post_id=13278 ip=10.0.0.30 status=success latency_ms=153
+2025-03-01 08:03:20,516 - instagram - INFO - user=kate_design action=view_post post_id=23434 ip=10.0.0.38 status=success latency_ms=96
+2025-03-01 08:03:22,926 - instagram - INFO - user=sam_tech action=login ip=172.16.4.7 status=success latency_ms=64
+2025-03-01 08:03:25,644 - instagram - INFO - user=bob_smith action=send_dm target=quinn_f ip=172.16.2.1 status=success latency_ms=86
+2025-03-01 08:03:27,708 - instagram - INFO - user=olivia_travels action=view_story story_id=s6635 ip=172.16.4.3 status=success latency_ms=91
+2025-03-01 08:03:28,186 - instagram - INFO - user=carol_90 action=unlike_post post_id=21395 ip=10.0.0.21 status=success latency_ms=57
+2025-03-01 08:03:29,876 - instagram - INFO - user=frank_real action=unlike_post post_id=22280 ip=10.0.0.3 status=success latency_ms=57
+2025-03-01 08:03:31,581 - instagram - INFO - user=rachel_w action=add_comment post_id=21395 ip=192.168.1.14 status=success latency_ms=54
+2025-03-01 08:03:31,853 - instagram - INFO - user=quinn_f action=request_account_delete ip=172.16.2.9 status=success latency_ms=155
+2025-03-01 08:03:33,713 - instagram - INFO - user=grace_liu action=unlike_post post_id=81426 ip=10.0.0.27 status=success latency_ms=55
+2025-03-01 08:03:35,557 - instagram - INFO - user=bob_smith action=view_post post_id=46463 ip=192.168.1.36 status=success latency_ms=46
+2025-03-01 08:03:38,514 - instagram - INFO - user=peter_builds action=login ip=192.168.1.25 status=success latency_ms=60
+2025-03-01 08:03:39,028 - instagram - INFO - user=frank_real action=upload_reel ip=192.168.1.49 size_mb=23.8 status=success latency_ms=2069
+2025-03-01 08:03:42,013 - instagram - INFO - user=olivia_travels action=login ip=172.16.4.7 status=success latency_ms=93
+2025-03-01 08:03:43,997 - instagram - INFO - user=jake_99 action=search query=art ip=10.0.0.26 status=success results=427 latency_ms=153
+2025-03-01 08:03:44,606 - instagram - INFO - user=harry_x action=upload_reel ip=10.0.0.19 size_mb=14.6 status=success latency_ms=1728
+2025-03-01 08:03:46,735 - instagram - INFO - user=carol_90 action=view_profile target=olivia_travels ip=192.168.1.45 status=success latency_ms=53
+2025-03-01 08:03:49,160 - instagram - INFO - user=iris_ml action=login ip=172.16.2.9 status=success latency_ms=105
+2025-03-01 08:03:50,571 - instagram - INFO - user=peter_builds action=login ip=172.16.3.5 status=success latency_ms=74
+2025-03-01 08:03:53,477 - instagram - ERROR - user=rachel_w action=upload_reel ip=172.16.2.1 status=failed error=unsupported_format latency_ms=98
+2025-03-01 08:03:54,830 - instagram - INFO - user=harry_x action=unlike_post post_id=68878 ip=10.0.0.34 status=success latency_ms=17
+2025-03-01 08:03:57,598 - instagram - CRITICAL - user=peter_builds action=rate_limit_triggered ip=45.33.32.156 requests_per_min=595 status=blocked latency_ms=0
+2025-03-01 08:04:00,065 - instagram - INFO - user=eve_photo action=enable_2fa ip=10.0.0.24 status=success latency_ms=178
+2025-03-01 08:04:02,269 - instagram - INFO - user=kate_design action=login ip=172.16.3.6 status=success latency_ms=42
+2025-03-01 08:04:02,951 - instagram - INFO - user=olivia_travels action=send_dm target=nick_code ip=192.168.1.11 status=success latency_ms=103
+2025-03-01 08:04:05,553 - instagram - INFO - user=carol_90 action=view_profile target=jake_99 ip=10.0.0.21 status=success latency_ms=53
+2025-03-01 08:04:07,159 - instagram - INFO - user=mia_art action=login ip=172.16.0.5 status=success latency_ms=98
+2025-03-01 08:04:07,356 - instagram - INFO - user=kate_design action=search query=music ip=172.16.0.2 status=success results=446 latency_ms=168
+2025-03-01 08:04:07,776 - instagram - INFO - user=tina_fit action=view_story story_id=s2519 ip=192.168.1.18 status=success latency_ms=39
+2025-03-01 08:04:08,507 - instagram - INFO - user=nick_code action=send_dm target=dave_jones ip=192.168.1.22 status=success latency_ms=76
+2025-03-01 08:04:09,758 - instagram - INFO - user=jake_99 action=login ip=172.16.4.1 status=success latency_ms=37
+2025-03-01 08:04:12,600 - instagram - INFO - user=leo_run action=unlike_post post_id=23434 ip=10.0.0.8 status=success latency_ms=51
+2025-03-01 08:04:15,188 - instagram - INFO - user=frank_real action=login ip=192.168.1.31 status=success latency_ms=78
+2025-03-01 08:04:17,126 - instagram - CRITICAL - user=harry_x action=rate_limit_triggered ip=88.8.8.8 requests_per_min=437 status=blocked latency_ms=0
+2025-03-01 08:04:19,081 - instagram - INFO - user=iris_ml action=view_post post_id=87236 ip=10.0.0.19 status=success latency_ms=112
+2025-03-01 08:04:20,356 - instagram - INFO - user=jake_99 action=upload_photo ip=172.16.0.8 size_mb=8.6 status=success latency_ms=1403
+2025-03-01 08:04:22,385 - instagram - INFO - user=nick_code action=view_reel reel_id=r3803 ip=172.16.1.1 status=success latency_ms=59
+2025-03-01 08:04:23,644 - instagram - INFO - user=dave_jones action=unlike_post post_id=87397 ip=192.168.1.40 status=success latency_ms=59
+2025-03-01 08:04:26,177 - instagram - INFO - user=alice_dev action=follow target=jake_99 ip=172.16.3.1 status=success latency_ms=26
+2025-03-01 08:04:28,713 - instagram - CRITICAL - user=peter_builds action=rate_limit_triggered ip=45.33.32.156 requests_per_min=435 status=blocked latency_ms=0
+2025-03-01 08:04:31,410 - instagram - INFO - user=leo_run action=follow target=iris_ml ip=192.168.1.38 status=success latency_ms=100
+2025-03-01 08:04:32,954 - instagram - INFO - user=bob_smith action=view_profile target=carol_90 ip=192.168.1.49 status=success latency_ms=84
+2025-03-01 08:04:33,723 - instagram - CRITICAL - user=eve_photo action=rate_limit_triggered ip=45.33.32.156 requests_per_min=625 status=blocked latency_ms=0
+2025-03-01 08:04:35,828 - instagram - INFO - user=grace_liu action=view_profile target=mia_art ip=192.168.1.26 status=success latency_ms=77
+2025-03-01 08:04:37,086 - instagram - ERROR - user=iris_ml action=login ip=172.16.3.1 status=failed error=wrong_password attempt=4 latency_ms=71
+2025-03-01 08:04:38,060 - instagram - WARNING - user=kate_design action=login ip=172.16.2.6 status=failed error=wrong_password attempt=2 latency_ms=68
+2025-03-01 08:04:38,479 - instagram - INFO - user=mia_art action=report_post post_id=40495 ip=172.16.4.9 status=success latency_ms=43
+2025-03-01 08:04:41,284 - instagram - INFO - user=mia_art action=view_post post_id=13905 ip=192.168.1.11 status=success latency_ms=57
+2025-03-01 08:04:44,098 - instagram - INFO - user=iris_ml action=unlike_post post_id=13478 ip=10.0.0.35 status=success latency_ms=21
+2025-03-01 08:04:46,646 - instagram - ERROR - user=harry_x action=login ip=10.0.0.21 status=failed error=wrong_password attempt=3 latency_ms=78
+2025-03-01 08:04:49,355 - instagram - INFO - user=harry_x action=login ip=172.16.0.4 status=success latency_ms=68
+2025-03-01 08:04:49,880 - instagram - ERROR - user=nick_code action=login ip=192.168.1.24 status=failed error=wrong_password attempt=3 latency_ms=51
+2025-03-01 08:04:50,485 - instagram - WARNING - user=dave_jones action=session_expired ip=192.168.1.40 status=expired latency_ms=0
+2025-03-01 08:04:51,167 - instagram - INFO - user=mia_art action=unlike_post post_id=95181 ip=10.0.0.19 status=success latency_ms=52
+2025-03-01 08:04:52,362 - instagram - INFO - user=nick_code action=login ip=172.16.0.5 status=success latency_ms=82
+2025-03-01 08:04:53,379 - instagram - INFO - user=bob_smith action=unlike_post post_id=13905 ip=172.16.1.1 status=success latency_ms=75
+2025-03-01 08:04:56,070 - instagram - INFO - user=leo_run action=disable_2fa ip=192.168.1.22 status=success latency_ms=189
+2025-03-01 08:04:57,982 - instagram - INFO - user=leo_run action=like_post post_id=28289 ip=192.168.1.17 status=success latency_ms=75
+2025-03-01 08:04:58,239 - instagram - INFO - user=carol_90 action=view_story story_id=s7201 ip=172.16.0.6 status=success latency_ms=12
+2025-03-01 08:05:00,559 - instagram - INFO - user=kate_design action=enable_2fa ip=192.168.1.41 status=success latency_ms=67
+2025-03-01 08:05:01,213 - instagram - INFO - user=grace_liu action=view_post post_id=21395 ip=10.0.0.36 status=success latency_ms=109
+2025-03-01 08:05:02,289 - instagram - INFO - user=tina_fit action=view_post post_id=42098 ip=192.168.1.10 status=success latency_ms=79
+2025-03-01 08:05:03,806 - instagram - INFO - user=frank_real action=search query=travel ip=192.168.1.24 status=success results=67 latency_ms=33
+2025-03-01 08:05:04,375 - instagram - INFO - user=harry_x action=unlike_post post_id=39256 ip=10.0.0.36 status=success latency_ms=18
+2025-03-01 08:05:05,907 - instagram - INFO - user=nick_code action=login ip=10.0.0.28 status=success latency_ms=87
+2025-03-01 08:05:06,134 - instagram - INFO - user=quinn_f action=login ip=10.0.0.36 status=success latency_ms=108
+2025-03-01 08:05:07,829 - instagram - INFO - user=quinn_f action=add_comment post_id=93810 ip=192.168.1.48 status=success latency_ms=101
+2025-03-01 08:05:08,180 - instagram - INFO - user=nick_code action=login ip=172.16.0.9 status=success latency_ms=86
+2025-03-01 08:05:10,476 - instagram - INFO - user=carol_90 action=follow target=dave_jones ip=10.0.0.2 status=success latency_ms=94
+2025-03-01 08:05:12,596 - instagram - INFO - user=kate_design action=disable_2fa ip=10.0.0.9 status=success latency_ms=166
+2025-03-01 08:05:13,526 - instagram - INFO - user=tina_fit action=login ip=10.0.0.16 status=success latency_ms=100
+2025-03-01 08:05:15,270 - instagram - WARNING - user=nick_code action=session_expired ip=10.0.0.18 status=expired latency_ms=0
+2025-03-01 08:05:17,068 - instagram - INFO - user=kate_design action=add_comment post_id=14165 ip=172.16.2.9 status=success latency_ms=80
+2025-03-01 08:05:19,060 - instagram - INFO - user=kate_design action=view_post post_id=83563 ip=172.16.0.7 status=success latency_ms=128
+2025-03-01 08:05:20,878 - instagram - INFO - user=carol_90 action=logout ip=192.168.1.21 status=success latency_ms=12
+2025-03-01 08:05:21,173 - instagram - INFO - user=dave_jones action=send_dm target=frank_real ip=172.16.1.8 status=success latency_ms=91
+2025-03-01 08:05:23,948 - instagram - INFO - user=sam_tech action=upload_reel ip=172.16.4.8 size_mb=10.2 status=success latency_ms=1989
+2025-03-01 08:05:26,457 - instagram - CRITICAL - user=nick_code action=rate_limit_triggered ip=88.8.8.8 requests_per_min=494 status=blocked latency_ms=0
+2025-03-01 08:05:29,196 - instagram - INFO - user=jake_99 action=login ip=10.0.0.6 status=success latency_ms=49
+2025-03-01 08:05:31,524 - instagram - INFO - user=peter_builds action=report_post post_id=87397 ip=192.168.1.38 status=success latency_ms=74
+2025-03-01 08:05:33,331 - instagram - INFO - user=leo_run action=send_dm target=tina_fit ip=192.168.1.24 status=success latency_ms=48
+2025-03-01 08:05:35,875 - instagram - INFO - user=rachel_w action=send_dm target=sam_tech ip=88.8.8.8 status=success latency_ms=23
+2025-03-01 08:05:37,316 - instagram - INFO - user=iris_ml action=view_story story_id=s2519 ip=192.168.1.13 status=success latency_ms=127
+2025-03-01 08:05:39,007 - instagram - INFO - user=leo_run action=view_post post_id=76237 ip=192.168.1.10 status=success latency_ms=94
+2025-03-01 08:05:41,229 - instagram - INFO - user=carol_90 action=send_dm target=alice_dev ip=192.168.1.28 status=success latency_ms=31
+2025-03-01 08:05:42,555 - instagram - INFO - user=grace_liu action=like_post post_id=21395 ip=10.0.0.9 status=success latency_ms=38
+2025-03-01 08:05:42,820 - instagram - ERROR - user=kate_design action=view_post ip=172.16.2.3 status=failed error=db_timeout latency_ms=10236
+2025-03-01 08:05:43,204 - instagram - INFO - user=eve_photo action=send_dm target=bob_smith ip=192.168.1.30 status=success latency_ms=106
+2025-03-01 08:05:44,950 - instagram - INFO - user=iris_ml action=search query=music ip=10.0.0.17 status=success results=310 latency_ms=143
+2025-03-01 08:05:46,760 - instagram - INFO - user=iris_ml action=send_dm target=dave_jones ip=192.168.1.37 status=success latency_ms=64
+2025-03-01 08:05:49,542 - instagram - INFO - user=dave_jones action=search query=cats ip=192.168.1.46 status=success results=249 latency_ms=164
+2025-03-01 08:05:50,429 - instagram - INFO - user=jake_99 action=view_story story_id=s3615 ip=192.168.1.15 status=success latency_ms=10
+2025-03-01 08:05:51,664 - instagram - INFO - user=jake_99 action=view_post post_id=81426 ip=172.16.4.7 status=success latency_ms=42
+2025-03-01 08:05:52,243 - instagram - INFO - user=kate_design action=login ip=192.168.1.25 status=success latency_ms=52
+2025-03-01 08:05:53,743 - instagram - INFO - user=mia_art action=search query=coding ip=10.0.0.29 status=success results=286 latency_ms=201
+2025-03-01 08:05:53,869 - instagram - INFO - user=carol_90 action=report_post post_id=24592 ip=10.0.0.11 status=success latency_ms=47
+2025-03-01 08:05:56,267 - instagram - INFO - user=olivia_travels action=login ip=172.16.4.3 status=success latency_ms=84
+2025-03-01 08:05:57,020 - instagram - INFO - user=mia_art action=follow target=jake_99 ip=172.16.1.3 status=success latency_ms=61
+2025-03-01 08:05:58,552 - instagram - INFO - user=tina_fit action=logout ip=10.0.0.19 status=success latency_ms=39
+2025-03-01 08:06:01,014 - instagram - INFO - user=carol_90 action=report_post post_id=23434 ip=10.0.0.16 status=success latency_ms=47
+2025-03-01 08:06:02,428 - instagram - ERROR - user=mia_art action=login ip=10.0.0.28 status=failed error=wrong_password attempt=3 latency_ms=34
+2025-03-01 08:06:03,909 - instagram - INFO - user=frank_real action=add_comment post_id=46048 ip=192.168.1.19 status=success latency_ms=64
+2025-03-01 08:06:04,380 - instagram - ERROR - user=leo_run action=like_post ip=172.16.1.6 status=failed error=db_timeout latency_ms=4935
+2025-03-01 08:06:07,114 - instagram - INFO - user=eve_photo action=view_story story_id=s5552 ip=192.168.1.42 status=success latency_ms=107
+2025-03-01 08:06:09,473 - instagram - ERROR - user=carol_90 action=send_dm ip=192.168.1.32 status=failed error=db_timeout latency_ms=6800
+2025-03-01 08:06:12,081 - instagram - INFO - user=sam_tech action=search query=cats ip=10.0.0.18 status=success results=329 latency_ms=192
+2025-03-01 08:06:13,932 - instagram - INFO - user=kate_design action=disable_2fa ip=172.16.3.5 status=success latency_ms=88
+2025-03-01 08:06:14,212 - instagram - INFO - user=carol_90 action=add_comment post_id=81482 ip=10.0.0.21 status=success latency_ms=115
+2025-03-01 08:06:14,495 - instagram - INFO - user=leo_run action=login ip=10.0.0.25 status=success latency_ms=34
+2025-03-01 08:06:16,978 - instagram - INFO - user=leo_run action=view_story story_id=s7924 ip=172.16.3.1 status=success latency_ms=88
+2025-03-01 08:06:17,196 - instagram - WARNING - user=quinn_f action=add_comment post_id=40495 ip=10.0.0.10 status=failed error=comment_blocked latency_ms=67
+2025-03-01 08:06:18,017 - instagram - INFO - user=olivia_travels action=logout ip=172.16.4.2 status=success latency_ms=30
+2025-03-01 08:06:18,490 - instagram - WARNING - user=kate_design action=add_comment post_id=42098 ip=10.0.0.38 status=failed error=comment_blocked latency_ms=48
+2025-03-01 08:06:19,554 - instagram - INFO - user=kate_design action=login ip=172.16.1.4 status=success latency_ms=35
+2025-03-01 08:06:21,278 - instagram - INFO - user=olivia_travels action=upload_photo ip=10.0.0.17 size_mb=22.1 status=success latency_ms=993
+2025-03-01 08:06:24,106 - instagram - INFO - user=kate_design action=follow target=leo_run ip=172.16.0.8 status=success latency_ms=91
+2025-03-01 08:06:24,771 - instagram - INFO - user=mia_art action=view_story story_id=s7201 ip=192.168.1.46 status=success latency_ms=121
+2025-03-01 08:06:25,349 - instagram - INFO - user=kate_design action=unfollow target=eve_photo ip=192.168.1.20 status=success latency_ms=70
+2025-03-01 08:06:26,941 - instagram - ERROR - user=tina_fit action=view_profile ip=172.16.1.3 status=failed error=db_timeout latency_ms=7578
+2025-03-01 08:06:27,373 - instagram - INFO - user=kate_design action=login ip=172.16.2.8 status=success latency_ms=97
+2025-03-01 08:06:28,300 - instagram - INFO - user=nick_code action=unlike_post post_id=87397 ip=10.0.0.26 status=success latency_ms=26
+2025-03-01 08:06:28,913 - instagram - INFO - user=kate_design action=send_dm target=grace_liu ip=172.16.4.7 status=success latency_ms=48
+2025-03-01 08:06:31,173 - instagram - INFO - user=eve_photo action=view_post post_id=38657 ip=192.168.1.19 status=success latency_ms=108
+2025-03-01 08:06:32,766 - instagram - INFO - user=quinn_f action=search query=cats ip=192.168.1.14 status=success results=67 latency_ms=182
+2025-03-01 08:06:33,494 - instagram - INFO - user=eve_photo action=view_story story_id=s7201 ip=192.168.1.30 status=success latency_ms=113
+2025-03-01 08:06:36,044 - instagram - INFO - user=olivia_travels action=like_post post_id=83563 ip=192.168.1.15 status=success latency_ms=43
+2025-03-01 08:06:38,281 - instagram - INFO - user=jake_99 action=send_dm target=peter_builds ip=172.16.1.9 status=success latency_ms=49
+2025-03-01 08:06:39,837 - instagram - INFO - user=harry_x action=request_account_delete ip=192.168.1.49 status=success latency_ms=99
+2025-03-01 08:06:42,047 - instagram - INFO - user=sam_tech action=add_comment post_id=81482 ip=10.0.0.17 status=success latency_ms=104
+2025-03-01 08:06:42,663 - instagram - INFO - user=nick_code action=login ip=172.16.4.9 status=success latency_ms=107
+2025-03-01 08:06:43,223 - instagram - INFO - user=iris_ml action=follow target=mia_art ip=192.168.1.16 status=success latency_ms=86
+2025-03-01 08:06:45,375 - instagram - INFO - user=jake_99 action=send_dm target=iris_ml ip=192.168.1.20 status=success latency_ms=77
+2025-03-01 08:06:47,272 - instagram - INFO - user=eve_photo action=like_post post_id=46463 ip=172.16.3.1 status=success latency_ms=67
+2025-03-01 08:06:48,853 - instagram - INFO - user=leo_run action=login ip=172.16.4.5 status=success latency_ms=94
+2025-03-01 08:06:49,018 - instagram - INFO - user=harry_x action=disable_2fa ip=10.0.0.10 status=success latency_ms=107
+2025-03-01 08:06:49,666 - instagram - INFO - user=kate_design action=login ip=172.16.4.5 status=success latency_ms=72
+2025-03-01 08:06:50,284 - instagram - INFO - user=eve_photo action=view_reel reel_id=r6313 ip=192.168.1.14 status=success latency_ms=116
+2025-03-01 08:06:52,581 - instagram - INFO - user=peter_builds action=follow target=carol_90 ip=10.0.0.18 status=success latency_ms=39
+2025-03-01 08:06:53,864 - instagram - INFO - user=tina_fit action=unlike_post post_id=81426 ip=10.0.0.28 status=success latency_ms=30
+2025-03-01 08:06:54,171 - instagram - INFO - user=dave_jones action=view_story story_id=s7201 ip=192.168.1.16 status=success latency_ms=68
+2025-03-01 08:06:54,288 - instagram - CRITICAL - user=dave_jones action=rate_limit_triggered ip=198.211.127.116 requests_per_min=748 status=blocked latency_ms=0
+2025-03-01 08:06:54,344 - instagram - INFO - user=quinn_f action=view_post post_id=81482 ip=10.0.0.34 status=success latency_ms=64
+2025-03-01 08:06:57,131 - instagram - INFO - user=tina_fit action=view_reel reel_id=r2169 ip=10.0.0.6 status=success latency_ms=95
+2025-03-01 08:06:59,409 - instagram - INFO - user=carol_90 action=change_password ip=10.0.0.28 status=success latency_ms=184
+2025-03-01 08:07:01,384 - instagram - INFO - user=quinn_f action=change_password ip=172.16.2.4 status=success latency_ms=149
+2025-03-01 08:07:01,500 - instagram - INFO - user=bob_smith action=unlike_post post_id=87397 ip=172.16.0.3 status=success latency_ms=62
+2025-03-01 08:07:01,974 - instagram - INFO - user=leo_run action=login ip=172.16.2.4 status=success latency_ms=110
+2025-03-01 08:07:03,467 - instagram - INFO - user=sam_tech action=send_dm target=eve_photo ip=172.16.1.7 status=success latency_ms=25
+2025-03-01 08:07:06,321 - instagram - INFO - user=rachel_w action=logout ip=10.0.0.4 status=success latency_ms=15
+2025-03-01 08:07:09,303 - instagram - INFO - user=olivia_travels action=add_comment post_id=39256 ip=172.16.1.2 status=success latency_ms=48
+2025-03-01 08:07:09,524 - instagram - INFO - user=olivia_travels action=view_post post_id=64987 ip=192.168.1.14 status=success latency_ms=35
+2025-03-01 08:07:11,513 - instagram - INFO - user=kate_design action=view_reel reel_id=r4752 ip=172.16.4.5 status=success latency_ms=79
+2025-03-01 08:07:13,025 - instagram - INFO - user=iris_ml action=send_dm target=grace_liu ip=192.168.1.14 status=success latency_ms=56
+2025-03-01 08:07:14,713 - instagram - INFO - user=bob_smith action=follow target=jake_99 ip=172.16.3.5 status=success latency_ms=75
+2025-03-01 08:07:15,528 - instagram - ERROR - user=olivia_travels action=view_profile ip=172.16.3.9 status=failed error=db_timeout latency_ms=10976
+2025-03-01 08:07:15,916 - instagram - INFO - user=peter_builds action=add_comment post_id=46463 ip=172.16.1.1 status=success latency_ms=74
+2025-03-01 08:07:17,169 - instagram - INFO - user=nick_code action=like_post post_id=38893 ip=192.168.1.20 status=success latency_ms=49
+2025-03-01 08:07:19,045 - instagram - INFO - user=kate_design action=login ip=192.168.1.23 status=success latency_ms=69
+2025-03-01 08:07:20,926 - instagram - INFO - user=tina_fit action=unlike_post post_id=36062 ip=172.16.1.4 status=success latency_ms=37
+2025-03-01 08:07:22,420 - instagram - WARNING - user=bob_smith action=session_expired ip=172.16.1.6 status=expired latency_ms=0
+2025-03-01 08:07:25,081 - instagram - INFO - user=tina_fit action=view_post post_id=13278 ip=10.0.0.16 status=success latency_ms=95
+2025-03-01 08:07:25,715 - instagram - INFO - user=mia_art action=add_comment post_id=95181 ip=10.0.0.7 status=success latency_ms=43
+2025-03-01 08:07:26,040 - instagram - INFO - user=tina_fit action=view_profile target=bob_smith ip=172.16.0.8 status=success latency_ms=26
+2025-03-01 08:07:28,568 - instagram - WARNING - user=harry_x action=unfollow target=mia_art ip=172.16.2.3 status=failed error=user_not_found latency_ms=17
+2025-03-01 08:07:28,932 - instagram - INFO - user=eve_photo action=add_comment post_id=87397 ip=172.16.0.8 status=success latency_ms=137
+2025-03-01 08:07:29,446 - instagram - INFO - user=sam_tech action=upload_reel ip=192.168.1.27 size_mb=7.0 status=success latency_ms=2167
+2025-03-01 08:07:31,796 - instagram - INFO - user=alice_dev action=view_story story_id=s6881 ip=172.16.1.7 status=success latency_ms=126
+2025-03-01 08:07:34,352 - instagram - INFO - user=dave_jones action=view_profile target=peter_builds ip=192.168.1.43 status=success latency_ms=37
+2025-03-01 08:07:34,904 - instagram - CRITICAL - user=jake_99 action=rate_limit_triggered ip=45.33.32.156 requests_per_min=404 status=blocked latency_ms=0
+2025-03-01 08:07:35,313 - instagram - INFO - user=eve_photo action=login ip=172.16.3.4 status=success latency_ms=86
+2025-03-01 08:07:36,591 - instagram - INFO - user=kate_design action=unlike_post post_id=13278 ip=172.16.0.7 status=success latency_ms=72
+2025-03-01 08:07:38,724 - instagram - INFO - user=frank_real action=search query=python ip=172.16.1.4 status=success results=406 latency_ms=122
+2025-03-01 08:07:40,797 - instagram - INFO - user=harry_x action=enable_2fa ip=192.168.1.25 status=success latency_ms=110
+2025-03-01 08:07:43,353 - instagram - INFO - user=alice_dev action=upload_reel ip=10.0.0.7 size_mb=23.6 status=success latency_ms=465
+2025-03-01 08:07:45,085 - instagram - INFO - user=carol_90 action=view_story story_id=s1711 ip=192.168.1.18 status=success latency_ms=77
+2025-03-01 08:07:45,438 - instagram - ERROR - user=nick_code action=upload_photo ip=172.16.2.9 status=failed error=unsupported_format latency_ms=214
+2025-03-01 08:07:47,746 - instagram - INFO - user=olivia_travels action=search query=coffee ip=10.0.0.20 status=success results=65 latency_ms=229
+2025-03-01 08:07:49,855 - instagram - INFO - user=sam_tech action=send_dm target=eve_photo ip=192.168.1.33 status=success latency_ms=75
+2025-03-01 08:07:50,568 - instagram - INFO - user=bob_smith action=login ip=172.16.3.1 status=success latency_ms=51
+2025-03-01 08:07:51,781 - instagram - INFO - user=kate_design action=search query=coffee ip=172.16.4.5 status=success results=485 latency_ms=162
+2025-03-01 08:07:54,391 - instagram - INFO - user=carol_90 action=view_story story_id=s2674 ip=192.168.1.42 status=success latency_ms=26
+2025-03-01 08:07:57,139 - instagram - INFO - user=jake_99 action=upload_photo ip=10.0.0.39 size_mb=14.1 status=success latency_ms=550
+2025-03-01 08:07:57,357 - instagram - CRITICAL - user=tina_fit action=rate_limit_triggered ip=45.33.32.156 requests_per_min=777 status=blocked latency_ms=0
+2025-03-01 08:07:58,491 - instagram - INFO - user=alice_dev action=login ip=192.168.1.20 status=success latency_ms=103
+2025-03-01 08:08:01,170 - instagram - INFO - user=grace_liu action=upload_photo ip=172.16.2.2 size_mb=15.2 status=success latency_ms=793
+2025-03-01 08:08:03,077 - instagram - INFO - user=jake_99 action=view_story story_id=s6881 ip=10.0.0.22 status=success latency_ms=48
+2025-03-01 08:08:05,029 - instagram - INFO - user=carol_90 action=login ip=172.16.1.1 status=success latency_ms=91
+2025-03-01 08:08:06,712 - instagram - INFO - user=grace_liu action=unfollow target=leo_run ip=10.0.0.4 status=success latency_ms=64
+2025-03-01 08:08:07,752 - instagram - INFO - user=eve_photo action=like_post post_id=40495 ip=172.16.2.1 status=success latency_ms=35
+2025-03-01 08:08:08,009 - instagram - INFO - user=olivia_travels action=view_post post_id=42098 ip=192.168.1.25 status=success latency_ms=22
+2025-03-01 08:08:08,713 - instagram - INFO - user=jake_99 action=unlike_post post_id=88907 ip=172.16.4.7 status=success latency_ms=30
+2025-03-01 08:08:10,675 - instagram - INFO - user=kate_design action=upload_reel ip=172.16.4.5 size_mb=4.2 status=success latency_ms=1254
+2025-03-01 08:08:12,335 - instagram - INFO - user=peter_builds action=view_post post_id=13278 ip=172.16.3.7 status=success latency_ms=130
+2025-03-01 08:08:13,830 - instagram - INFO - user=quinn_f action=enable_2fa ip=10.0.0.19 status=success latency_ms=199
+2025-03-01 08:08:16,078 - instagram - INFO - user=bob_smith action=view_story story_id=s1711 ip=192.168.1.16 status=success latency_ms=46
+2025-03-01 08:08:17,626 - instagram - INFO - user=alice_dev action=login ip=172.16.3.3 status=success latency_ms=63
+2025-03-01 08:08:18,473 - instagram - INFO - user=mia_art action=login ip=10.0.0.7 status=success latency_ms=101
+2025-03-01 08:08:20,775 - instagram - INFO - user=leo_run action=view_reel reel_id=r7216 ip=10.0.0.31 status=success latency_ms=67
+2025-03-01 08:08:21,221 - instagram - INFO - user=iris_ml action=change_password ip=172.16.2.9 status=success latency_ms=82
+2025-03-01 08:08:22,768 - instagram - INFO - user=mia_art action=view_profile target=kate_design ip=10.0.0.8 status=success latency_ms=81
+2025-03-01 08:08:25,740 - instagram - INFO - user=eve_photo action=follow target=nick_code ip=192.168.1.35 status=success latency_ms=37
+2025-03-01 08:08:27,901 - instagram - INFO - user=kate_design action=add_comment post_id=13905 ip=172.16.2.6 status=success latency_ms=154
+2025-03-01 08:08:29,560 - instagram - ERROR - user=eve_photo action=view_profile ip=10.0.0.2 status=failed error=db_timeout latency_ms=4331
+2025-03-01 08:08:31,687 - instagram - INFO - user=tina_fit action=report_post post_id=76237 ip=172.16.1.7 status=success latency_ms=41
+2025-03-01 08:08:31,805 - instagram - INFO - user=quinn_f action=add_comment post_id=76237 ip=10.0.0.29 status=success latency_ms=144
+2025-03-01 08:08:34,673 - instagram - INFO - user=leo_run action=search query=art ip=10.0.0.3 status=success results=298 latency_ms=108
+2025-03-01 08:08:37,092 - instagram - INFO - user=alice_dev action=add_comment post_id=13478 ip=10.0.0.37 status=success latency_ms=139
+2025-03-01 08:08:37,840 - instagram - INFO - user=sam_tech action=send_dm target=tina_fit ip=192.168.1.39 status=success latency_ms=81
+2025-03-01 08:08:40,678 - instagram - INFO - user=quinn_f action=send_dm target=mia_art ip=172.16.0.2 status=success latency_ms=38
+2025-03-01 08:08:41,348 - instagram - INFO - user=harry_x action=upload_photo ip=192.168.1.14 size_mb=10.9 status=success latency_ms=1057
+2025-03-01 08:08:43,329 - instagram - INFO - user=nick_code action=view_story story_id=s7201 ip=172.16.1.1 status=success latency_ms=127
+2025-03-01 08:08:46,091 - instagram - INFO - user=bob_smith action=login ip=172.16.1.3 status=success latency_ms=71
+2025-03-01 08:08:48,324 - instagram - INFO - user=peter_builds action=unlike_post post_id=39256 ip=10.0.0.28 status=success latency_ms=73
+2025-03-01 08:08:50,357 - instagram - INFO - user=kate_design action=unlike_post post_id=81426 ip=10.0.0.30 status=success latency_ms=54
+2025-03-01 08:08:51,626 - instagram - INFO - user=grace_liu action=view_story story_id=s2519 ip=172.16.4.8 status=success latency_ms=38
+2025-03-01 08:08:53,641 - instagram - INFO - user=jake_99 action=view_story story_id=s1711 ip=172.16.1.3 status=success latency_ms=50
+2025-03-01 08:08:54,190 - instagram - ERROR - user=leo_run action=view_profile ip=10.0.0.32 status=failed error=db_timeout latency_ms=5357
+2025-03-01 08:08:54,839 - instagram - INFO - user=sam_tech action=upload_reel ip=172.16.0.8 size_mb=22.9 status=success latency_ms=1847
+2025-03-01 08:08:56,700 - instagram - INFO - user=jake_99 action=view_story story_id=s7924 ip=192.168.1.15 status=success latency_ms=54
+2025-03-01 08:08:59,052 - instagram - INFO - user=iris_ml action=add_comment post_id=28289 ip=172.16.1.8 status=success latency_ms=74
+2025-03-01 08:09:00,095 - instagram - INFO - user=iris_ml action=login ip=192.168.1.27 status=success latency_ms=60
+2025-03-01 08:09:00,360 - instagram - CRITICAL - user=bob_smith action=rate_limit_triggered ip=88.8.8.8 requests_per_min=438 status=blocked latency_ms=0
+2025-03-01 08:09:00,973 - instagram - INFO - user=dave_jones action=like_post post_id=22280 ip=10.0.0.13 status=success latency_ms=58
+2025-03-01 08:09:02,971 - instagram - INFO - user=alice_dev action=upload_photo ip=172.16.4.9 size_mb=22.5 status=success latency_ms=1998
+2025-03-01 08:09:05,666 - instagram - INFO - user=peter_builds action=view_reel reel_id=r5010 ip=172.16.0.5 status=success latency_ms=46
+2025-03-01 08:09:07,907 - instagram - INFO - user=bob_smith action=send_dm target=tina_fit ip=172.16.4.2 status=success latency_ms=49
+2025-03-01 08:09:08,105 - instagram - CRITICAL - user=bob_smith action=rate_limit_triggered ip=45.33.32.156 requests_per_min=380 status=blocked latency_ms=0
+2025-03-01 08:09:09,340 - instagram - INFO - user=mia_art action=add_comment post_id=46463 ip=172.16.2.4 status=success latency_ms=151
+2025-03-01 08:09:10,762 - instagram - INFO - user=bob_smith action=view_story story_id=s6574 ip=192.168.1.11 status=success latency_ms=128
+2025-03-01 08:09:12,877 - instagram - INFO - user=jake_99 action=request_account_delete ip=10.0.0.19 status=success latency_ms=84
+2025-03-01 08:09:14,806 - instagram - INFO - user=olivia_travels action=view_post post_id=21395 ip=192.168.1.44 status=success latency_ms=30
+2025-03-01 08:09:16,064 - instagram - INFO - user=iris_ml action=view_story story_id=s7224 ip=172.16.1.4 status=success latency_ms=111
+2025-03-01 08:09:18,730 - instagram - INFO - user=sam_tech action=send_dm target=frank_real ip=172.16.0.8 status=success latency_ms=98
+2025-03-01 08:09:21,521 - instagram - INFO - user=mia_art action=like_post post_id=21395 ip=172.16.2.9 status=success latency_ms=40
+2025-03-01 08:09:22,587 - instagram - INFO - user=dave_jones action=request_account_delete ip=192.168.1.33 status=success latency_ms=132
+2025-03-01 08:09:23,873 - instagram - INFO - user=alice_dev action=unlike_post post_id=13905 ip=192.168.1.43 status=success latency_ms=36
+2025-03-01 08:09:26,658 - instagram - INFO - user=sam_tech action=upload_reel ip=172.16.1.5 size_mb=16.8 status=success latency_ms=327
+2025-03-01 08:09:29,589 - instagram - INFO - user=dave_jones action=view_reel reel_id=r4598 ip=10.0.0.20 status=success latency_ms=74
+2025-03-01 08:09:32,156 - instagram - ERROR - user=jake_99 action=login ip=172.16.1.1 status=failed error=wrong_password attempt=3 latency_ms=43
+2025-03-01 08:09:34,069 - instagram - ERROR - user=harry_x action=send_dm ip=192.168.1.38 status=failed error=db_timeout latency_ms=4254
+2025-03-01 08:09:36,320 - instagram - INFO - user=tina_fit action=unlike_post post_id=40495 ip=10.0.0.8 status=success latency_ms=63
+2025-03-01 08:09:38,199 - instagram - INFO - user=grace_liu action=view_story story_id=s7924 ip=172.16.2.1 status=success latency_ms=77
+2025-03-01 08:09:40,492 - instagram - INFO - user=quinn_f action=like_post post_id=46463 ip=172.16.1.3 status=success latency_ms=18
+2025-03-01 08:09:41,018 - instagram - INFO - user=quinn_f action=upload_photo ip=192.168.1.35 size_mb=20.6 status=success latency_ms=1104
+2025-03-01 08:09:41,608 - instagram - INFO - user=grace_liu action=unfollow target=carol_90 ip=172.16.1.4 status=success latency_ms=78
+2025-03-01 08:09:42,920 - instagram - INFO - user=quinn_f action=add_comment post_id=24592 ip=10.0.0.14 status=success latency_ms=126
+2025-03-01 08:09:45,338 - instagram - INFO - user=alice_dev action=view_post post_id=95181 ip=10.0.0.11 status=success latency_ms=37
+2025-03-01 08:09:45,634 - instagram - INFO - user=carol_90 action=like_post post_id=36062 ip=192.168.1.15 status=success latency_ms=49
+2025-03-01 08:09:46,238 - instagram - INFO - user=carol_90 action=add_comment post_id=81482 ip=172.16.4.5 status=success latency_ms=138
+2025-03-01 08:09:47,834 - instagram - INFO - user=nick_code action=request_account_delete ip=10.0.0.8 status=success latency_ms=164
+2025-03-01 08:09:49,308 - instagram - INFO - user=mia_art action=search query=coding ip=192.168.1.20 status=success results=68 latency_ms=197
+2025-03-01 08:09:49,879 - instagram - INFO - user=dave_jones action=request_account_delete ip=192.168.1.32 status=success latency_ms=185
+2025-03-01 08:09:51,825 - instagram - INFO - user=harry_x action=login ip=172.16.3.1 status=success latency_ms=68
+2025-03-01 08:09:52,647 - instagram - INFO - user=rachel_w action=upload_photo ip=10.0.0.15 size_mb=8.6 status=success latency_ms=764
+2025-03-01 08:09:55,215 - instagram - INFO - user=dave_jones action=logout ip=192.168.1.14 status=success latency_ms=23
+2025-03-01 08:09:57,093 - instagram - INFO - user=alice_dev action=view_post post_id=88907 ip=192.168.1.40 status=success latency_ms=14
+2025-03-01 08:09:57,324 - instagram - INFO - user=tina_fit action=search query=travel ip=172.16.0.8 status=success results=125 latency_ms=219
+2025-03-01 08:09:57,605 - instagram - INFO - user=mia_art action=view_post post_id=81426 ip=10.0.0.17 status=success latency_ms=120
+2025-03-01 08:10:00,014 - instagram - INFO - user=eve_photo action=enable_2fa ip=10.0.0.25 status=success latency_ms=237
+2025-03-01 08:10:02,768 - instagram - INFO - user=kate_design action=follow target=leo_run ip=10.0.0.34 status=success latency_ms=38
+2025-03-01 08:10:05,241 - instagram - INFO - user=quinn_f action=like_post post_id=98696 ip=192.168.1.38 status=success latency_ms=50
+2025-03-01 08:10:06,701 - instagram - INFO - user=frank_real action=search query=coding ip=172.16.0.2 status=success results=253 latency_ms=42
+2025-03-01 08:10:08,954 - instagram - INFO - user=mia_art action=upload_reel ip=172.16.2.4 size_mb=7.5 status=success latency_ms=576
+2025-03-01 08:10:11,902 - instagram - INFO - user=peter_builds action=report_post post_id=81482 ip=192.168.1.40 status=success latency_ms=74
+2025-03-01 08:10:14,234 - instagram - INFO - user=eve_photo action=add_comment post_id=24592 ip=172.16.2.7 status=success latency_ms=93
+2025-03-01 08:10:16,932 - instagram - INFO - user=quinn_f action=like_post post_id=98696 ip=192.168.1.27 status=success latency_ms=36
+2025-03-01 08:10:17,762 - instagram - INFO - user=carol_90 action=add_comment post_id=87397 ip=172.16.4.4 status=success latency_ms=132
+2025-03-01 08:10:18,110 - instagram - INFO - user=bob_smith action=like_post post_id=88907 ip=192.168.1.44 status=success latency_ms=70
+2025-03-01 08:10:20,123 - instagram - INFO - user=grace_liu action=send_dm target=sam_tech ip=172.16.2.6 status=success latency_ms=47
+2025-03-01 08:10:21,040 - instagram - CRITICAL - user=grace_liu action=rate_limit_triggered ip=45.33.32.156 requests_per_min=215 status=blocked latency_ms=0
+2025-03-01 08:10:23,939 - instagram - INFO - user=grace_liu action=send_dm target=quinn_f ip=172.16.4.9 status=success latency_ms=51
+2025-03-01 08:10:25,148 - instagram - INFO - user=tina_fit action=view_post post_id=40495 ip=172.16.1.3 status=success latency_ms=51
+2025-03-01 08:10:27,234 - instagram - INFO - user=mia_art action=upload_reel ip=10.0.0.20 size_mb=9.0 status=success latency_ms=2007
+2025-03-01 08:10:29,207 - instagram - INFO - user=olivia_travels action=logout ip=192.168.1.22 status=success latency_ms=33
+2025-03-01 08:10:31,561 - instagram - INFO - user=kate_design action=view_reel reel_id=r3677 ip=172.16.4.3 status=success latency_ms=15
+2025-03-01 08:10:33,983 - instagram - INFO - user=harry_x action=login ip=172.16.1.7 status=success latency_ms=104
+2025-03-01 08:10:36,366 - instagram - INFO - user=nick_code action=login ip=192.168.1.47 status=success latency_ms=78
+2025-03-01 08:10:39,044 - instagram - INFO - user=harry_x action=upload_reel ip=10.0.0.24 size_mb=19.8 status=success latency_ms=2179
+2025-03-01 08:10:39,667 - instagram - INFO - user=peter_builds action=login ip=10.0.0.19 status=success latency_ms=51
+2025-03-01 08:10:39,855 - instagram - INFO - user=rachel_w action=view_story story_id=s3615 ip=10.0.0.23 status=success latency_ms=77
+2025-03-01 08:10:39,931 - instagram - INFO - user=carol_90 action=logout ip=172.16.4.6 status=success latency_ms=11
+2025-03-01 08:10:42,877 - instagram - INFO - user=nick_code action=report_post post_id=23434 ip=192.168.1.27 status=success latency_ms=24
+2025-03-01 08:10:45,457 - instagram - INFO - user=eve_photo action=view_reel reel_id=r5010 ip=192.168.1.11 status=success latency_ms=17
+2025-03-01 08:10:47,766 - instagram - INFO - user=tina_fit action=add_comment post_id=22280 ip=172.16.4.2 status=success latency_ms=108
+2025-03-01 08:10:48,990 - instagram - INFO - user=nick_code action=login ip=192.168.1.11 status=success latency_ms=98
+2025-03-01 08:10:50,803 - instagram - INFO - user=alice_dev action=logout ip=10.0.0.25 status=success latency_ms=31
+2025-03-01 08:10:51,840 - instagram - CRITICAL - user=frank_real action=rate_limit_triggered ip=198.211.127.116 requests_per_min=352 status=blocked latency_ms=0
+2025-03-01 08:10:53,553 - instagram - INFO - user=grace_liu action=upload_reel ip=172.16.0.1 size_mb=9.8 status=success latency_ms=964
+2025-03-01 08:10:56,404 - instagram - INFO - user=olivia_travels action=view_story story_id=s6514 ip=10.0.0.33 status=success latency_ms=48
+2025-03-01 08:10:58,114 - instagram - INFO - user=carol_90 action=change_password ip=172.16.0.5 status=success latency_ms=73
+2025-03-01 08:11:00,211 - instagram - INFO - user=mia_art action=upload_photo ip=10.0.0.9 size_mb=17.0 status=success latency_ms=369
+2025-03-01 08:11:02,424 - instagram - INFO - user=nick_code action=view_profile target=tina_fit ip=172.16.0.4 status=success latency_ms=22
+2025-03-01 08:11:03,584 - instagram - INFO - user=bob_smith action=view_story story_id=s3045 ip=192.168.1.39 status=success latency_ms=70

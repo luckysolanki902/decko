@@ -1,0 +1,48 @@
+{
+  "name": "decko",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "validate:quizzes": "node scripts/validate-quizzes.mjs",
+    "typecheck": "tsc --noEmit --incremental false",
+    "migrate:revision": "node scripts/migrate-revision-content.mjs",
+    "stats": "node scripts/content-stats.mjs"
+  },
+  "dependencies": {
+    "@codemirror/lang-css": "^6.3.1",
+    "@codemirror/lang-html": "^6.4.11",
+    "@codemirror/lang-javascript": "^6.2.5",
+    "@codemirror/lang-python": "^6.2.1",
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "@uiw/codemirror-theme-github": "^4.25.9",
+    "@uiw/react-codemirror": "^4.25.9",
+    "framer-motion": "^12.35.0",
+    "jose": "^6.2.0",
+    "lucide-react": "^0.563.0",
+    "mongodb": "^7.1.0",
+    "next": "16.1.6",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-markdown": "^10.1.0",
+    "rehype-highlight": "^7.0.2",
+    "rehype-raw": "^7.0.0",
+    "remark-gfm": "^4.0.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "babel-plugin-react-compiler": "1.0.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.6",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  },
+  "description": "Free, in-depth engineering courses with a retrieval-practice revision system.",
+  "license": "MIT"
+}

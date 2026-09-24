@@ -1,0 +1,502 @@
+@import "tailwindcss";
+@import "highlight.js/styles/github.css";
+
+@variant dark (&:is(.dark, .dark *));
+
+/* Syntax highlighting: dark mode override */
+html.dark .hljs {
+  background: #1A1A18;
+  color: #E8E7E4;
+}
+html.dark .hljs-comment,
+html.dark .hljs-quote { color: #686664; font-style: italic; }
+html.dark .hljs-keyword,
+html.dark .hljs-selector-tag,
+html.dark .hljs-type { color: #D4A090; }
+html.dark .hljs-string,
+html.dark .hljs-attr { color: #8AAAC4; }
+html.dark .hljs-number,
+html.dark .hljs-literal { color: #8AAAC4; }
+html.dark .hljs-built_in { color: #D4A090; }
+html.dark .hljs-function,
+html.dark .hljs-title { color: #B0A0C0; }
+html.dark .hljs-params { color: #E8E7E4; }
+html.dark .hljs-variable,
+html.dark .hljs-template-variable { color: #D4A090; }
+html.dark .hljs-subst { color: #E8E7E4; }
+html.dark .hljs-name,
+html.dark .hljs-tag { color: #7AAE8E; }
+html.dark .hljs-attribute { color: #8AAAC4; }
+html.dark .hljs-symbol,
+html.dark .hljs-bullet { color: #D4A090; }
+html.dark .hljs-meta { color: #8AAAC4; }
+html.dark .hljs-selector-class,
+html.dark .hljs-selector-id { color: #B0A0C0; }
+html.dark .hljs-class .hljs-title { color: #D4A090; }
+html.dark .hljs-doctag { color: #D4A090; }
+html.dark .hljs-strong { font-weight: bold; }
+html.dark .hljs-emphasis { font-style: italic; }
+html.dark .hljs-deletion { color: #D4A090; background: #2A1810; }
+html.dark .hljs-addition { color: #7AAE8E; background: #142018; }
+
+/* Lecture deck surface tokens, consumed by the quiz OptionButton. These must be
+   set here rather than via a style prop on the deck: an inline custom property
+   outranks every selector, so light values set inline would leave the dark
+   overrides below dead. */
+.lecture-deck-root {
+  --lecture-text: #1A1A1A;
+  --lecture-muted: #8A8A86;
+  --lecture-border: #E5E4DF;
+  --lecture-card: #FAFAF8;
+  /* The deck sets --deck-accent-light / --deck-accent-dark inline (one per
+     roadmap); only the switch between them lives here. Setting --deck-accent
+     itself inline would outrank the dark rule below and pin the accent to its
+     light value in dark mode. */
+  --deck-accent: var(--deck-accent-light, #3E5C77);
+}
+html.dark .lecture-deck-root {
+  --lecture-text: #F5F4F1;
+  --lecture-muted: #9E9C98;
+  --lecture-border: #2C2B28;
+  --lecture-card: #1A1A18;
+  --deck-accent: var(--deck-accent-dark, #8FB3D0);
+}
+
+/* Where a <pre> already paints the code block's background and padding, the
+   highlight.js `.hljs` background would paint a second, unpadded rectangle
+   inside it — a slab visibly inset within the block. Let the <pre> be the only
+   surface and keep just the token colours. Two classes and two elements so this
+   outranks the theme's own `html.dark .hljs`. */
+.md-code-surface pre code,
+.md-code-surface pre code.hljs {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+}
+
+/* Quiz option buttons are already a card and carry their own state colour
+   (selected / correct / wrong). The highlight.js theme paints `.hljs` with a
+   hard background, which stacked a second slab inside each option and fought
+   that state colour. Inside an option, code is plain monospace text on the
+   option's own surface; only the token colours survive.
+
+   Selectors carry two classes and two elements so they outrank the theme's own
+   `html.dark .hljs`; otherwise the slab reappears the moment an option turns
+   green or red and its surface no longer happens to match. */
+.quiz-option-md pre,
+.quiz-option-md pre code,
+.quiz-option-md pre code.hljs {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Warm neutral palette — derived from brand hue */
+  --bg-primary: #FAFAF8;
+  --bg-secondary: #FFFFFF;
+  --bg-tertiary: #F2F1EE;
+
+  --text-primary: #1A1A1A;
+  --text-secondary: #52524E;
+  --text-tertiary: #8A8A86;
+  --text-muted: #ADADA9;
+
+  /* Rose accent (DAML) */
+  --accent-rose: #B87D6C;
+  --accent-rose-soft: #F0E5E0;
+  --accent-rose-text: #9A6452;
+
+  /* Blue accent (WebD) */
+  --accent-blue: #6889A6;
+  --accent-blue-soft: #E2EBF0;
+  --accent-blue-text: #507290;
+
+  /* Semantic */
+  --success: #5D8E72;
+  --success-soft: #E2EDE6;
+
+  /* Borders */
+  --border: #E5E4DF;
+  --border-hover: #D0CEC8;
+
+  /* Shadows — barely visible */
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.03);
+  --shadow-sm: 0 1px 4px rgba(0,0,0,0.04);
+  --shadow-md: 0 2px 8px rgba(0,0,0,0.05);
+
+  /* One radius */
+  --radius: 12px;
+
+  /* Transitions */
+  --transition: 200ms ease-out;
+}
+
+/* ===== Dark Mode ===== */
+html.dark {
+  --bg-primary: #111110;
+  --bg-secondary: #1A1A18;
+  --bg-tertiary: #232321;
+
+  --text-primary: #E8E7E4;
+  --text-secondary: #9E9C98;
+  --text-tertiary: #686664;
+  --text-muted: #4A4846;
+
+  --accent-rose: #D4A090;
+  --accent-rose-soft: #2A2018;
+  --accent-rose-text: #D4A090;
+
+  --accent-blue: #8AAAC4;
+  --accent-blue-soft: #182228;
+  --accent-blue-text: #8AAAC4;
+
+  --success: #7AAE8E;
+  --success-soft: #1C2820;
+
+  --border: #2C2B28;
+  --border-hover: #3A3936;
+
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.2);
+  --shadow-sm: 0 1px 4px rgba(0,0,0,0.25);
+  --shadow-md: 0 2px 8px rgba(0,0,0,0.3);
+
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-background: var(--bg-primary);
+  --color-foreground: var(--text-primary);
+  --font-sans: var(--font-sans);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: var(--bg-primary);
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+  transition: background-color 200ms ease-out, color 200ms ease-out;
+}
+
+/* Typography — one font family, weight for hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+/* Hide scrollbar utility */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+a, button {
+  transition: all var(--transition);
+}
+
+::selection {
+  background: var(--accent-rose-soft);
+  color: var(--text-primary);
+}
+
+html.dark ::selection {
+  background: rgba(212, 160, 144, 0.25);
+  color: var(--text-primary);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-rose);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Checkbox */
+.checkbox-custom {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid var(--border);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 150ms ease-out;
+  flex-shrink: 0;
+  position: relative;
+  background: var(--bg-secondary);
+}
+
+.checkbox-custom:hover {
+  border-color: var(--accent-rose);
+}
+
+.checkbox-custom:checked {
+  background: var(--accent-rose);
+  border-color: var(--accent-rose);
+}
+
+.checkbox-custom:checked::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 5px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Progress bar — solid, no gradient, no shimmer */
+.progress-track {
+  height: 4px;
+  border-radius: 2px;
+  background: var(--bg-tertiary);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: var(--accent-rose);
+  transition: width 300ms ease-out;
+}
+
+.progress-fill-blue {
+  background: var(--accent-blue);
+}
+
+/* Accordion */
+.accordion-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 250ms ease-out;
+}
+
+.accordion-content[data-open="true"] {
+  grid-template-rows: 1fr;
+}
+
+.accordion-content > div {
+  overflow: hidden;
+}
+
+/* Animations — minimal */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 200ms ease-out forwards;
+}
+
+/* Stagger children */
+.stagger-children > * {
+  animation: fadeIn 250ms ease-out forwards;
+  opacity: 0;
+}
+.stagger-children > *:nth-child(1) { animation-delay: 30ms; }
+.stagger-children > *:nth-child(2) { animation-delay: 60ms; }
+.stagger-children > *:nth-child(3) { animation-delay: 90ms; }
+.stagger-children > *:nth-child(4) { animation-delay: 120ms; }
+.stagger-children > *:nth-child(5) { animation-delay: 150ms; }
+.stagger-children > *:nth-child(6) { animation-delay: 180ms; }
+.stagger-children > *:nth-child(7) { animation-delay: 210ms; }
+.stagger-children > *:nth-child(8) { animation-delay: 240ms; }
+.stagger-children > *:nth-child(9) { animation-delay: 270ms; }
+.stagger-children > *:nth-child(10) { animation-delay: 300ms; }
+.stagger-children > *:nth-child(n+11) { animation-delay: 330ms; }
+
+/* Layout */
+.container-page {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media (min-width: 640px) {
+  .container-page {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-page {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+
+.section-gap {
+  padding-top: 32px;
+  padding-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+  .section-gap {
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+}
+
+/* Utility */
+.text-balance {
+  text-wrap: balance;
+}
+
+/* ===== Dark Mode Markdown Content ===== */
+html.dark .markdown-content h1,
+html.dark .markdown-content h2,
+html.dark .markdown-content h3,
+html.dark .markdown-content h4 {
+  color: #E8E7E4;
+}
+
+html.dark .markdown-content p,
+html.dark .markdown-content li {
+  color: #9E9C98;
+}
+
+html.dark .markdown-content > code,
+html.dark .markdown-content :not(pre) > code {
+  background: #232321;
+  color: #D4A090;
+}
+
+html.dark .markdown-content blockquote {
+  background: #1C1B18;
+  border-color: #D4A090;
+}
+
+html.dark .markdown-content blockquote p {
+  color: #9E9C98;
+}
+
+html.dark .markdown-content table {
+  border-color: #2C2B28;
+}
+
+html.dark .markdown-content th {
+  background: #232321;
+  border-color: #2C2B28;
+  color: #E8E7E4;
+}
+
+html.dark .markdown-content td {
+  border-color: #2C2B28;
+  color: #9E9C98;
+}
+
+html.dark .markdown-content hr {
+  border-color: #2C2B28;
+}
+
+html.dark .markdown-content a {
+  color: #D4A090;
+}
+
+html.dark .markdown-content a:hover {
+  color: #E0B0A0;
+}
+
+/* "Up Next" accordion highlight */
+.accordion-next-to-study {
+  animation: nextStudyPulse 3s ease-in-out infinite;
+}
+
+@keyframes nextStudyPulse {
+  0%, 100% {
+    box-shadow: 0 0 16px rgba(212, 165, 165, 0.1), 0 0 0 1px rgba(212, 165, 165, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(212, 165, 165, 0.18), 0 0 0 1px rgba(212, 165, 165, 0.25);
+  }
+}
+
+html.dark .accordion-next-to-study {
+  animation: nextStudyPulseDark 3s ease-in-out infinite;
+}
+
+@keyframes nextStudyPulseDark {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(232, 180, 180, 0.06), 0 0 0 1px rgba(232, 180, 180, 0.12);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(232, 180, 180, 0.1), 0 0 0 1px rgba(232, 180, 180, 0.2);
+  }
+}
+
+/* Daily quiz shortcut — playful "pending" motion + calm quote entrance */
+@keyframes quizFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+@keyframes quizWiggle {
+  0%, 100% { transform: rotate(0deg); }
+  20% { transform: rotate(-14deg); }
+  60% { transform: rotate(12deg); }
+}
+@keyframes quizHalo {
+  0% { transform: scale(0.9); opacity: 0.45; }
+  70%, 100% { transform: scale(1.6); opacity: 0; }
+}
+@keyframes quizQuoteIn {
+  0% { opacity: 0; transform: translateY(-4px) scale(0.96); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .quiz-shortcut *,
+  .quiz-shortcut {
+    animation: none !important;
+  }
+}
