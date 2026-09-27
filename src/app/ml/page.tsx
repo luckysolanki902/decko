@@ -3,7 +3,7 @@ import { mlRoadmap } from '@/data/ml';
 import { normalizeRoadmap } from '@/lib/normalizeRoadmap';
 import { PageHeader } from '@/components/PageHeader';
 import { RoadmapProgress, PhaseSection } from '@/components/RoadmapProgress';
-import { BookOpen, FolderKanban } from 'lucide-react';
+import { BookOpen, FolderKanban, Sparkles } from 'lucide-react';
 import { courseJsonLd, getCourseMetadata } from '@/lib/seo';
 import { SeoJsonLd } from '@/components/SeoJsonLd';
 import { CoursePrerequisites } from '@/components/CoursePrerequisites';
@@ -100,7 +100,7 @@ export default function MLPage() {
 
         <CoursePrerequisites courseId="ml" />
 
-        <div className="grid gap-4 mb-8 md:grid-cols-2">
+        <div className="grid gap-4 mb-8 md:grid-cols-3">
           <Link href="/ml/notes" className="group">
             <div className="bg-white dark:bg-[#1A1A18] rounded-xl p-5 border border-[#E5E4DF] dark:border-[#2C2B28] hover:border-[#D0CEC8] dark:hover:border-[#3A3936] transition-colors">
               <div className="flex items-center gap-3">
@@ -123,6 +123,7 @@ export default function MLPage() {
               </div>
             </div>
           </Link>
+          <Link href="/ml/revision" className="group"><div className="bg-white dark:bg-[#1A1A18] rounded-xl p-5 border border-[#E5E4DF] dark:border-[#2C2B28] hover:border-[#D0CEC8] dark:hover:border-[#3A3936] transition-colors"><div className="flex items-center gap-3"><Sparkles className="w-5 h-5 text-[#5D8E72] dark:text-[#7AAE8E]" /><div><h3 className="text-sm font-semibold">Revision</h3><p className="text-xs text-[#8A8A86]">Recall first, then check</p></div></div></div></Link>
         </div>
 
         <RoadmapProgress

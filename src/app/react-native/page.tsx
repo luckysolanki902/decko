@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { BookOpen, FolderKanban } from 'lucide-react';
+import { BookOpen, FolderKanban, Sparkles } from 'lucide-react';
 import { reactNativeRoadmap } from '@/data/reactnative';
 import { normalizeRoadmap } from '@/lib/normalizeRoadmap';
 import { PageHeader } from '@/components/PageHeader';
@@ -22,9 +22,10 @@ export default function ReactNativePage() {
   return <main className="min-h-screen py-12 md:py-16"><SeoJsonLd data={courseJsonLd('reactnative')} /><div className="container-page">
     <PageHeader breadcrumbs={[{ label: 'React Native' }]} title={roadmap.title} subtitle={`${roadmap.totalDays} Days`} description={roadmap.description} variant="blue" />
     <CoursePrerequisites courseId="reactnative" />
-    <div className="grid gap-4 mb-8 md:grid-cols-2">
+    <div className="grid gap-4 mb-8 md:grid-cols-3">
       <Link href="/react-native/notes" className="group"><div className="bg-white dark:bg-[#1A1A18] rounded-xl p-5 border border-[#E5E4DF] dark:border-[#2C2B28] hover:border-[#61DAFB]"><div className="flex items-center gap-3"><BookOpen className="w-5 h-5 text-[#22A7C8]" /><div><h3 className="text-sm font-semibold">Lectures & Notes</h3><p className="text-xs text-[#8A8A86]">Mastery-depth lessons, exercises, and quizzes</p></div></div></div></Link>
       <Link href="/react-native/projects" className="group"><div className="bg-white dark:bg-[#1A1A18] rounded-xl p-5 border border-[#E5E4DF] dark:border-[#2C2B28] hover:border-[#61DAFB]"><div className="flex items-center gap-3"><FolderKanban className="w-5 h-5 text-[#22A7C8]" /><div><h3 className="text-sm font-semibold">Projects</h3><p className="text-xs text-[#8A8A86]">A substantial product and evidence gate in every phase</p></div></div></div></Link>
+      <Link href="/react-native/revision" className="group"><div className="bg-white dark:bg-[#1A1A18] rounded-xl p-5 border border-[#E5E4DF] dark:border-[#2C2B28] hover:border-[#61DAFB]"><div className="flex items-center gap-3"><Sparkles className="w-5 h-5 text-[#22A7C8]" /><div><h3 className="text-sm font-semibold">Revision</h3><p className="text-xs text-[#8A8A86]">Recall first, then check</p></div></div></div></Link>
     </div>
     <RoadmapProgress phases={roadmap.phases} section="reactnative" variant="blue" basePath="/react-native" groupedSections={sections} />
   </div></main>;

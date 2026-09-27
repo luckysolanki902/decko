@@ -1,15 +1,21 @@
 import { damlRoadmap } from '@/data/daml';
 import { mlRoadmap } from '@/data/ml';
 import { webdRoadmap } from '@/data/webd';
+import { dsaRoadmap } from '@/data/dsa';
+import { goRoadmap } from '@/data/go';
+import { reactNativeRoadmap } from '@/data/reactnative';
 import { normalizeRoadmap } from '@/lib/normalizeRoadmap';
 import { NormalizedRoadmap, RevisionLecture, RevisionRoadmapId } from '@/types';
 
-export const SUPPORTED_REVISION_ROADMAP_IDS: RevisionRoadmapId[] = ['daml', 'ml', 'webd'];
+export const SUPPORTED_REVISION_ROADMAP_IDS: RevisionRoadmapId[] = ['daml', 'ml', 'webd', 'dsa', 'go', 'reactnative'];
 
 const normalizedRevisionRoadmaps = {
   daml: normalizeRoadmap(damlRoadmap),
   ml: normalizeRoadmap(mlRoadmap),
   webd: normalizeRoadmap(webdRoadmap),
+  dsa: normalizeRoadmap(dsaRoadmap),
+  go: normalizeRoadmap(goRoadmap),
+  reactnative: normalizeRoadmap(reactNativeRoadmap),
 } satisfies Record<RevisionRoadmapId, NormalizedRoadmap>;
 
 export function isRevisionRoadmapId(value: unknown): value is RevisionRoadmapId {

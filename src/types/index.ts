@@ -149,7 +149,7 @@ export interface ProgressItem {
   completedAt: string | null;
 }
 
-export type RevisionRoadmapId = Exclude<RoadmapSection, 'go' | 'reactnative' | 'dsa'>;
+export type RevisionRoadmapId = RoadmapSection;
 
 // Quizzes are multiple-choice only: exactly one correct option, or two+ correct.
 export type RevisionQuestionType = 'single_correct' | 'multiple_correct';

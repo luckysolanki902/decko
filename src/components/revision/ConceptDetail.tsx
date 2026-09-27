@@ -6,8 +6,9 @@ import { ArrowLeft, ArrowRight, Check, Lock } from 'lucide-react';
 import { ConceptSummary, RevisionRoadmapId, RevisionTargetSummary } from '@/types';
 import { VARIANT_THEME, Variant } from '@/components/reader/DeckMarkdown';
 import { FreshnessChip, TONE, agoLabel, freshnessOf, isLearned, isUnreached, isWorthRevising } from './status';
+import { revisionBasePath } from '@/lib/revision/paths';
 
-const DECK_VARIANT: Record<RevisionRoadmapId, Variant> = { webd: 'webd', ml: 'ml', daml: 'ml' };
+const DECK_VARIANT: Record<RevisionRoadmapId, Variant> = { webd: 'webd', ml: 'ml', daml: 'ml', dsa: 'dsa', go: 'go', reactnative: 'reactnative' };
 
 // Revisions are a sequence, so they are laid out as one — a numbered path down
 // the page.
@@ -133,7 +134,7 @@ function TargetRow({
   if (isNext) {
     return (
       <Link
-        href={`/${roadmapId}/revision/concept/${conceptId}/${target.targetId}`}
+        href={`${revisionBasePath(roadmapId)}/concept/${conceptId}/${target.targetId}`}
         className={`group relative ${shared} px-5 py-6 pl-6`}
         style={{ background: 'color-mix(in srgb, var(--deck-accent) 8%, transparent)' }}
       >
@@ -145,7 +146,7 @@ function TargetRow({
 
   return (
     <Link
-      href={`/${roadmapId}/revision/concept/${conceptId}/${target.targetId}`}
+      href={`${revisionBasePath(roadmapId)}/concept/${conceptId}/${target.targetId}`}
       className={`group ${shared} bg-[#FAFAF8] px-5 py-5 hover:bg-white dark:bg-[#111110] dark:hover:bg-[#171715]`}
     >
       {body}
@@ -192,7 +193,7 @@ export default function ConceptDetail({ roadmapId, conceptId }: { roadmapId: Rev
     >
       <div className="mx-auto w-full max-w-4xl px-5 py-8 lg:px-10 lg:py-12">
         <Link
-          href={`/${roadmapId}/revision`}
+          href={revisionBasePath(roadmapId)}
           className="inline-flex items-center gap-1.5 font-mono text-[12px] text-[#8A8A86] transition-colors hover:text-[#52524E] dark:text-[#686664] dark:hover:text-[#9E9C98]"
         >
           <ArrowLeft className="h-3.5 w-3.5" /> All concepts

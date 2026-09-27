@@ -10,6 +10,7 @@
     "validate:quizzes": "node scripts/validate-quizzes.mjs",
     "typecheck": "tsc --noEmit --incremental false",
     "migrate:revision": "node scripts/migrate-revision-content.mjs",
+    "seed:first-revisions": "node scripts/seed-first-revisions.mjs",
     "stats": "node scripts/content-stats.mjs"
   },
   "dependencies": {

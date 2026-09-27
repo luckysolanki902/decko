@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { BookOpen, FolderKanban } from 'lucide-react';
+import { BookOpen, FolderKanban, Sparkles } from 'lucide-react';
 import { dsaRoadmap } from '@/data/dsa';
 import { normalizeRoadmap } from '@/lib/normalizeRoadmap';
 import { PageHeader } from '@/components/PageHeader';
@@ -22,9 +22,10 @@ export default function DsaPage() {
   return <main className="min-h-screen py-12 md:py-16"><SeoJsonLd data={courseJsonLd('dsa')} /><div className="container-page">
     <PageHeader breadcrumbs={[{ label: 'DSA with C++' }]} title={roadmap.title} subtitle={`${roadmap.totalDays} study units · flexible pace`} description={roadmap.description} variant="blue" />
     <CoursePrerequisites courseId="dsa" />
-    <div className="grid gap-4 mb-8 md:grid-cols-2">
+    <div className="grid gap-4 mb-8 md:grid-cols-3">
       <Link href="/dsa/notes" className="group"><div className="bg-white dark:bg-[#1A1A18] rounded-xl p-5 border border-[#E5E4DF] dark:border-[#2C2B28] hover:border-[#D0CEC8] dark:hover:border-[#3A3936]"><div className="flex items-center gap-3"><BookOpen className="w-5 h-5 text-[#6366F1]" /><div><h3 className="text-sm font-semibold">Lectures & Notes</h3><p className="text-xs text-[#8A8A86]">Guided attempts, spaced recall, practice banks, and quizzes</p></div></div></div></Link>
       <Link href="/dsa/projects" className="group"><div className="bg-white dark:bg-[#1A1A18] rounded-xl p-5 border border-[#E5E4DF] dark:border-[#2C2B28] hover:border-[#D0CEC8] dark:hover:border-[#3A3936]"><div className="flex items-center gap-3"><FolderKanban className="w-5 h-5 text-[#6366F1]" /><div><h3 className="text-sm font-semibold">Projects</h3><p className="text-xs text-[#8A8A86]">The contest-simulation capstone</p></div></div></div></Link>
+      <Link href="/dsa/revision" className="group"><div className="bg-white dark:bg-[#1A1A18] rounded-xl p-5 border border-[#E5E4DF] dark:border-[#2C2B28] hover:border-[#D0CEC8] dark:hover:border-[#3A3936]"><div className="flex items-center gap-3"><Sparkles className="w-5 h-5 text-[#6366F1]" /><div><h3 className="text-sm font-semibold">Revision</h3><p className="text-xs text-[#8A8A86]">Recall, trace, then check</p></div></div></div></Link>
     </div>
     <RoadmapProgress phases={roadmap.phases} section="dsa" variant="blue" basePath="/dsa" groupedSections={sections} />
   </div></main>;

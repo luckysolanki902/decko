@@ -6,14 +6,18 @@ import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { ConceptSummary, RevisionRoadmapId } from '@/types';
 import { VARIANT_THEME, Variant } from '@/components/reader/DeckMarkdown';
 import { FreshnessChip, MasteryStrip, isWorthRevising } from './status';
+import { courseBasePath, revisionBasePath } from '@/lib/revision/paths';
 
 const ROADMAP_LABEL: Record<string, string> = {
   webd: 'Web Development',
   daml: 'Python & Data Analytics',
   ml: 'ML, DL & GenAI',
+  dsa: 'DSA with C++',
+  go: 'Go Engineering',
+  reactnative: 'React Native',
 };
 
-const DECK_VARIANT: Record<RevisionRoadmapId, Variant> = { webd: 'webd', ml: 'ml', daml: 'ml' };
+const DECK_VARIANT: Record<RevisionRoadmapId, Variant> = { webd: 'webd', ml: 'ml', daml: 'ml', dsa: 'dsa', go: 'go', reactnative: 'reactnative' };
 
 export default function RevisionDashboard({ roadmapId }: { roadmapId: RevisionRoadmapId }) {
   const [concepts, setConcepts] = useState<ConceptSummary[] | null>(null);
@@ -65,7 +69,7 @@ export default function RevisionDashboard({ roadmapId }: { roadmapId: RevisionRo
     >
       <div className="mx-auto w-full max-w-6xl px-5 py-8 lg:px-10 lg:py-12">
         <Link
-          href={`/${roadmapId}`}
+          href={courseBasePath(roadmapId)}
           className="inline-flex items-center gap-1.5 font-mono text-[12px] text-[#8A8A86] transition-colors hover:text-[#52524E] dark:text-[#686664] dark:hover:text-[#9E9C98]"
         >
           <ArrowLeft className="h-3.5 w-3.5" /> {ROADMAP_LABEL[roadmapId]}
@@ -95,7 +99,7 @@ export default function RevisionDashboard({ roadmapId }: { roadmapId: RevisionRo
             "where do I start" moment in front of a grid of equal boxes. */}
         {nextUp && (
           <Link
-            href={`/${roadmapId}/revision/concept/${nextUp.concept.conceptId}/${nextUp.target.targetId}`}
+            href={`${revisionBasePath(roadmapId)}/concept/${nextUp.concept.conceptId}/${nextUp.target.targetId}`}
             className="group mt-8 flex flex-wrap items-center justify-between gap-4 rounded-2xl border p-6 transition-colors"
             style={{ borderColor: 'color-mix(in srgb, var(--deck-accent) 35%, transparent)' }}
           >
@@ -137,7 +141,7 @@ export default function RevisionDashboard({ roadmapId }: { roadmapId: RevisionRo
                 return (
                   <Link
                     key={concept.conceptId}
-                    href={`/${roadmapId}/revision/concept/${concept.conceptId}`}
+                    href={`${revisionBasePath(roadmapId)}/concept/${concept.conceptId}`}
                     className={`group relative flex flex-col p-5 transition-colors ${
                       concept.isCurrent
                         ? ''

@@ -11,6 +11,7 @@ import { VARIANT_THEME, Variant } from '@/components/reader/DeckMarkdown';
 import QuizStage from './QuizStage';
 import RevisionHistory from './RevisionHistory';
 import { SuggestionVote } from '@/components/suggestions/SuggestionVote';
+import { revisionBasePath } from '@/lib/revision/paths';
 
 interface TargetMeta {
   conceptId: string;
@@ -35,7 +36,7 @@ type StageId = RevisionQuizStageId | 'recap' | 'concepts';
 
 // The revision reader wears the same accent as that roadmap's lecture deck.
 // DAML has no deck variant of its own, so it borrows ML's green.
-const DECK_VARIANT: Record<RevisionRoadmapId, Variant> = { webd: 'webd', ml: 'ml', daml: 'ml' };
+const DECK_VARIANT: Record<RevisionRoadmapId, Variant> = { webd: 'webd', ml: 'ml', daml: 'ml', dsa: 'dsa', go: 'go', reactnative: 'reactnative' };
 
 function isStageDone(attempt: RevisionAttempt | null, stage: StageId): boolean {
   return Boolean(attempt?.stages?.[stage]);
@@ -68,7 +69,7 @@ export default function RevisionRunner({
   const [readerOpen, setReaderOpen] = useState(false);
 
   const stages = useMemo(() => (meta?.kind === 'final' ? FINAL_STAGES : REVISION_STAGES), [meta?.kind]);
-  const backHref = `/${roadmapId}/revision/concept/${conceptId}`;
+  const backHref = `${revisionBasePath(roadmapId)}/concept/${conceptId}`;
   const deckVariant = DECK_VARIANT[roadmapId];
 
   // Cards carry their lecture/topic labels; older generated sets do not, so fall
@@ -283,7 +284,7 @@ export default function RevisionRunner({
             history so the spacing means something.
           </p>
           <Link
-            href={`/login?next=/${roadmapId}/revision/concept/${conceptId}/${targetId}`}
+            href={`/login?next=${revisionBasePath(roadmapId)}/concept/${conceptId}/${targetId}`}
             className="mt-6 inline-block rounded-full px-6 py-3 font-mono text-sm font-semibold text-white transition-all hover:brightness-110 dark:text-[#0F0F0D]"
             style={{ background: 'var(--deck-accent)' }}
           >
