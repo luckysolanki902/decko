@@ -16,7 +16,7 @@ import {
 
 import { SiteHeader } from '@/components/SiteHeader';
 import { TrackersSection } from '@/components/trackers/TrackersSection';
-import { COURSES, COURSE_TOTALS } from '@/data/courses';
+import { COURSES } from '@/data/courses';
 import { getSession } from '@/lib/auth';
 import { GITHUB_REPO_URL, SITE_NAME } from '@/lib/site';
 
@@ -55,7 +55,7 @@ function Hero() {
         </p>
 
         <h1 className="text-balance text-4xl font-semibold leading-[1.08] tracking-tight text-[var(--text-primary)] sm:text-5xl md:text-6xl">
-          Learn it. Prove it. Keep it.
+          Learning the way you can&rsquo;t forget.
         </h1>
 
         <p className="mx-auto mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-[var(--text-secondary)]">
@@ -80,21 +80,6 @@ function Hero() {
           </Link>
         </div>
 
-        <dl className="mx-auto mt-14 grid max-w-2xl grid-cols-2 gap-6 sm:grid-cols-4 sm:gap-4">
-          {[
-            { value: COURSE_TOTALS.courses, label: 'courses' },
-            { value: COURSE_TOTALS.lectures, label: 'lectures' },
-            { value: '100.9k', label: 'words' },
-            { value: '98', label: 'quiz blocks' },
-          ].map(stat => (
-            <div key={stat.label}>
-              <dt className="text-2xl font-semibold tabular-nums text-[var(--text-primary)] sm:text-3xl">
-                {stat.value}
-              </dt>
-              <dd className="mt-1 text-xs text-[var(--text-tertiary)]">{stat.label}</dd>
-            </div>
-          ))}
-        </dl>
       </div>
     </section>
   );
@@ -111,8 +96,8 @@ function Courses() {
             Start where you are
           </h2>
           <p className="mt-2 max-w-2xl text-[15px] leading-relaxed text-[var(--text-secondary)]">
-            Every roadmap starts from its stated prerequisites and grows toward real work. This release opens
-            all six courses with three reviewed lectures, while the complete planned path stays visible on every roadmap.
+            Every roadmap starts from its stated prerequisites and grows toward real work. Reviewed lectures are
+            published continuously, while the complete planned path stays visible on every roadmap.
           </p>
         </div>
 
@@ -139,15 +124,13 @@ function Courses() {
                     {course.prerequisites}
                   </p>
 
-                  <div className="mt-6 flex flex-wrap items-center gap-2">
-                    <Tag>{course.lectures} lectures</Tag>
-                    <Tag>{course.days} days planned</Tag>
-                    {course.status === 'early' && (
+                  {course.status === 'early' && (
+                    <div className="mt-6">
                       <span className="rounded-lg bg-[var(--accent-rose-soft)] px-2.5 py-1 text-[11px] font-medium text-[var(--accent-rose-text)]">
                         Early, being written
                       </span>
-                    )}
-                  </div>
+                    </div>
+                  )}
                 </article>
               </Link>
             );
@@ -163,14 +146,6 @@ function Courses() {
         </p>
       </div>
     </section>
-  );
-}
-
-function Tag({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="rounded-lg bg-[var(--bg-tertiary)] px-2.5 py-1 text-[11px] text-[var(--text-secondary)]">
-      {children}
-    </span>
   );
 }
 
@@ -272,8 +247,8 @@ function LearningLoop() {
             The course checks before your confidence gets ahead of you
           </h2>
           <p className="mt-3 text-[15px] leading-relaxed text-[var(--text-secondary)]">
-            The current library has 61 checkpoint quizzes inside lectures and 18 end-of-lecture quizzes.
-            They are not decoration and they are not saved for exam day. They are part of how each idea is taught.
+            Checkpoint and end-of-lecture quizzes are not decoration, and they are not saved for exam day. They
+            are part of how each idea is taught and corrected while the reasoning is still fresh.
           </p>
         </div>
 
